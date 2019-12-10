@@ -1,0 +1,45 @@
+html, body, *{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+html body{
+  margin: 0;
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    line-height: normal;
+  }
+
+  .container{
+    max-width: $containerWidth;
+    margin: auto;
+    padding: 0 10px;
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+
+  .flex{
+    display: flex;
+    &.nav{
+      *{
+        margin: 0 10px;
+        &:first-child{
+          margin-left: 0;
+        }
+      }
+    }
+    &.wrap{
+      flex-wrap: wrap;
+    }
+  }
+
+  .center-block{
+    display: block;
+    margin: auto;
+  }
+}
