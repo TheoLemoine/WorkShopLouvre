@@ -1,0 +1,42 @@
+{
+    "name": "workshop-louvre",
+    "version": "1.0.0",
+    "description": "Workshop sur la petite galerie du louvre 2019",
+    "main": "src/app/index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "webpack-dev-server --config webpack.dev.js",
+        "build": "webpack --config webpack.prod.js",
+        "deploy": "webpack --config webpack.prod.js && surge ./dist workshop-phryne.surge.sh"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.7.2",
+        "@babel/polyfill": "^7.7.0",
+        "@babel/preset-env": "^7.7.1",
+        "@babel/preset-react": "^7.7.0",
+        "@babel/preset-typescript": "^7.7.2",
+        "@types/react-dom": "^16.9.4",
+        "@types/react": "^16.9.11",
+        "babel": "^6.23.0",
+        "babel-cli": "^6.26.0",
+        "babel-loader": "^8.0.6",
+        "copy-webpack-plugin": "^5.0.5",
+        "css-loader": "^3.2.0",
+        "node-sass": "^4.13.0",
+        "prettier": "^1.19.1",
+        "sass-loader": "^8.0.0",
+        "style-loader": "^1.0.0",
+        "surge": "^0.21.3",
+        "terser-webpack-plugin": "^2.2.1",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10",
+        "webpack-copy-plugin": "^0.0.4",
+        "webpack-dev-server": "^3.9.0",
+        "webpack-merge": "^4.2.2"
+    },
+    "dependencies": {
+        "prop-types": "^15.7.2",
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0"
+    }
+}
