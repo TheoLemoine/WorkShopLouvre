@@ -37,8 +37,11 @@
     },
     "dependencies": {
         "prop-types": "^15.7.2",
+        "raw-loader": "^4.0.0",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
         "react-spring": "^8.0.27"
+        "react-scroll-parallax": "^2.2.0",
+        "schema-utils": "^2.6.1"
     }
 }

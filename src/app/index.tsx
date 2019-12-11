@@ -3,6 +3,6 @@ import React from 'react'
 
 import './scss/main.scss'
 
-import App from './components/App'
+import AppContainer from "./components/AppContainer";
 
-render(<App />, document.getElementById('root'))
+render(<AppContainer />, document.getElementById('root'))

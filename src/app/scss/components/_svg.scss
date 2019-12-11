@@ -1,0 +1,8 @@
+.svg {
+    display: block;
+
+    svg {
+        display: block;
+        @include size(100%, auto)
+    }
+}

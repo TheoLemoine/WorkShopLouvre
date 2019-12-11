@@ -3,6 +3,10 @@ import { ScrollLineProvider } from '../hooks/useScrollLine'
 import ScrollLine from './ScrollLine'
 import { SceneElement, SceneEvent } from '../reducers/scrollLine'
 import Page from './Scenes/Page'
+import {Parallax} from "react-scroll-parallax/cjs";
+import Svg from "./Svg";
+import ring from "../assets/img/ring-of-dots.svg"
+import hemispheres from "../assets/img/hemispheres.svg"
 
 const events: SceneEvent[] = [
     { in: ['1'], out: [] },
@@ -10,6 +14,29 @@ const events: SceneEvent[] = [
     { in: ['3'], out: [] },
     { in: ['4'], out: ['2', '3'] },
 ]
+export default () => (
+    <div className="app">
+        <div className="container">
+            <Parallax
+                y={[-20, 20]}
+                className="ring"
+            >
+                <Svg svg={ring} />
+            </Parallax>
+            <Parallax
+                y={[-50, 20]}
+                className="circle"
+            >
+                <div className="circleInner"/>
+            </Parallax>
+            <Svg
+                className="hemispheres"
+                svg={hemispheres}
+            />
+        </div>
+        <p className="scroll">Scroll</p>
+    </div>
+)
 
 const slide = {
     from: {
