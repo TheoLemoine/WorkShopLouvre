@@ -6,7 +6,8 @@
         "preserveConstEnums": true,
         "sourceMap": true,
         "jsx": "react",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true
     },
     "files": [
         "core.ts",
@@ -23,11 +24,6 @@
         "tsc.ts",
         "diagnosticInformationMap.generated.ts"
     ],
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "**/*.spec.ts"
-    ]
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
 }
