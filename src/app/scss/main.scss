@@ -1,13 +1,11 @@
 // Import variables & minxins
-@import "helpers/variables";
-@import "helpers/mixins";
+@import 'helpers/variables';
+@import 'helpers/mixins';
 
 // Common
-@import "common";
-
+@import 'common';
 
 // Components
 
 // Pages
-@import "page/home";
-
+@import 'page/home';

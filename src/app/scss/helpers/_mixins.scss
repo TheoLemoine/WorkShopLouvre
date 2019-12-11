@@ -37,43 +37,43 @@
  */
 @mixin media($media) {
     // Code pour les grand écrans d'ordinateurs
-    @if $media == "large-desktop" {
+    @if $media == 'large-desktop' {
         @media screen and (min-width: #{$desktop}) {
             @content;
         }
     }
     // Code pour les écrans d'ordinateurs et +
-    @if $media == "desktop" {
+    @if $media == 'desktop' {
         @media screen and (min-width: #{$tablet}) {
             @content;
         }
     }
     // Code uniquement pour les écrans de tablette
-    @if $media == "only-tablet" {
+    @if $media == 'only-tablet' {
         @media screen and (min-width: #{$mobile}) and (max-width: #{$tablet}) {
             @content;
         }
     }
     // Code pour les écrans de tablette et -
-    @if $media == "tablet" {
+    @if $media == 'tablet' {
         @media screen and (max-width: #{$tablet}) {
             @content;
         }
     }
     // Code uniquement pour les écrans mobile
-    @if $media == "mobile" {
+    @if $media == 'mobile' {
         @media screen and (max-width: #{$mobile}) {
             @content;
         }
     }
     // Code uniquement pour les écrans en format paysage
-    @if $media == "landscape" {
+    @if $media == 'landscape' {
         @media screen and (orientation: landscape) {
             @content;
         }
     }
     // Code uniquement pour l'impression
-    @if $media == "print" {
+    @if $media == 'print' {
         @media print {
             @content;
         }
