@@ -1,6 +1,5 @@
 import React from 'react'
-import { ScrollLineProvider } from '../hooks/useScrollLine'
-import ScrollLine from './ScrollLine'
+import ScrollLine from './ScrollLine/ScrollLine'
 import { SceneElement, SceneEvent } from '../reducers/scrollLine'
 import Page from './Scenes/Page'
 import {Parallax} from "react-scroll-parallax/cjs";
@@ -9,10 +8,10 @@ import ring from "../assets/img/ring-of-dots.svg"
 import hemispheres from "../assets/img/hemispheres.svg"
 
 const events: SceneEvent[] = [
-    { in: ['1'], out: [] },
-    { in: ['2'], out: ['1'] },
-    { in: ['3'], out: [] },
-    { in: ['4'], out: ['2', '3'] },
+    { in: ['1'], out: [], show: true },
+    { in: ['2'], out: ['1'], show: false },
+    { in: ['3'], out: [], show: false },
+    { in: ['4'], out: ['2', '3'], show: true },
 ]
 
 const slide = {
@@ -150,9 +149,5 @@ const scenes: SceneElement[] = [
 ]
 
 export default () => {
-    return (
-        <ScrollLineProvider scenes={scenes} events={events}>
-            <ScrollLine />
-        </ScrollLineProvider>
-    )
+    return <ScrollLine scenes={scenes} events={events} />
 }

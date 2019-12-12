@@ -15,6 +15,8 @@ export type SetAction = {
     index: number
 }
 
+export type Action = SetAction | PrevAction | NextAction
+
 // state
 export type SceneElement = {
     id: string
@@ -25,6 +27,7 @@ export type SceneElement = {
 export type SceneEvent = {
     out: string[]
     in: string[]
+    show: boolean
 }
 
 export type State = {
