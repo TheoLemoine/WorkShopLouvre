@@ -1,0 +1,61 @@
+
+.app {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 300vh;
+
+    .scroll {
+        position: absolute;
+        bottom: 5em;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $primary;
+        font-weight: 500;
+    }
+
+    .container {
+        position: relative;
+        width: 25em;
+    }
+
+    .ring {
+        position: relative;
+        z-index: 2;
+    }
+
+    .circle {
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        z-index: 1;
+        @include size(70%, 70%);
+
+        .parallax-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 3px solid $primary;
+            border-radius: 50%;
+            @include size(100%, 100%);
+        }
+    }
+
+    .circleInner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 3px solid $primary;
+        border-radius: 50%;
+        @include size(100%, 100%);
+    }
+
+    .hemispheres {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+    }
+
+}
