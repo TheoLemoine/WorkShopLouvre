@@ -29,7 +29,7 @@ const ScrollLine: FunctionComponent = () => {
     const { scenes, currentScenesIds } = state
 
     return (
-        <div onWheelCapture={handleScroll} className="scroll-line">
+        <div onWheel={handleScroll} className="scroll-line">
             {scenes.map(scene => (
                 <Transition
                     key={scene.id}

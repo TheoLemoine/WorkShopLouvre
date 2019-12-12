@@ -13,7 +13,7 @@ const events: SceneEvent[] = [
 
 const slide = {
     from: {
-        transform: 'translate3d(0, -150px, 0)',
+        transform: 'translate3d(0, 150px, 0)',
         opacity: 0,
     },
     enter: {
@@ -21,7 +21,7 @@ const slide = {
         opacity: 1,
     },
     leave: {
-        transform: 'translate3d(0, 150px, 0)',
+        transform: 'translate3d(0, -150px, 0)',
         opacity: 0,
     },
 }
