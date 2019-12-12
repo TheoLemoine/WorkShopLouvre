@@ -15,11 +15,14 @@ export type SetAction = {
     index: number
 }
 
+export type Action = SetAction | PrevAction | NextAction
+
 // state
 export type SceneElement = {
     id: string
     elem: ReactElement
     transitions: any
+    showInSideBar: boolean
 }
 
 export type SceneEvent = {

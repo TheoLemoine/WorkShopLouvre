@@ -1,6 +1,5 @@
 import React from 'react'
-import { ScrollLineProvider } from '../hooks/useScrollLine'
-import ScrollLine from './ScrollLine'
+import ScrollLine from './ScrollLine/ScrollLine'
 import { SceneElement, SceneEvent } from '../reducers/scrollLine'
 import Page from './Scenes/Page'
 
@@ -33,6 +32,7 @@ const scenes: SceneElement[] = [
             <Page position={{ x: 0, y: 0 }} size={{ width: 100, height: 100 }} text="A full page" />
         ),
         transitions: { ...slide },
+        showInSideBar: true,
     },
     {
         id: '2',
@@ -40,6 +40,7 @@ const scenes: SceneElement[] = [
             <Page position={{ x: 0, y: 5 }} size={{ width: 100, height: 40 }} text="A half page" />
         ),
         transitions: { ...slide },
+        showInSideBar: false,
     },
     {
         id: '3',
@@ -51,6 +52,7 @@ const scenes: SceneElement[] = [
             />
         ),
         transitions: { ...slide },
+        showInSideBar: false,
     },
     {
         id: '4',
@@ -62,13 +64,10 @@ const scenes: SceneElement[] = [
             />
         ),
         transitions: { ...slide },
+        showInSideBar: true,
     },
 ]
 
 export default () => {
-    return (
-        <ScrollLineProvider scenes={scenes} events={events}>
-            <ScrollLine />
-        </ScrollLineProvider>
-    )
+    return <ScrollLine scenes={scenes} events={events} />
 }
