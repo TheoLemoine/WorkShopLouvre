@@ -28,6 +28,7 @@
         "sass-loader": "^8.0.0",
         "style-loader": "^1.0.0",
         "surge": "^0.21.3",
+        "svg-inline-loader": "^0.8.0",
         "terser-webpack-plugin": "^2.2.1",
         "webpack": "^4.41.2",
         "webpack-cli": "^3.3.10",
@@ -40,8 +41,8 @@
         "raw-loader": "^4.0.0",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
-        "react-spring": "^8.0.27",
         "react-scroll-parallax": "^2.2.0",
+        "react-spring": "^8.0.27",
         "schema-utils": "^2.6.1"
     }
 }

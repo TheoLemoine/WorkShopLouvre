@@ -5,13 +5,13 @@ import Popup from '../Popup/Popup'
 type PageProps = {
     position: { x: number; y: number } | null
     size: { width: number; height: number } | null
-    children: null
+    children: any
 }
 
 const Page: FunctionComponent<PageProps> = ({
     position = { x: 0, y: 0 },
     size = { width: 100, height: 100 },
-    children= null
+    children = null,
 }) => (
     <div
         className="page"
