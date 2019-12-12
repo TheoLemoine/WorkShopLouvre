@@ -4,10 +4,10 @@ import { SceneElement, SceneEvent } from '../reducers/scrollLine'
 import Page from './Scenes/Page'
 
 const events: SceneEvent[] = [
-    { in: ['1'], out: [] },
-    { in: ['2'], out: ['1'] },
-    { in: ['3'], out: [] },
-    { in: ['4'], out: ['2', '3'] },
+    { in: ['1'], out: [], show: true },
+    { in: ['2'], out: ['1'], show: false },
+    { in: ['3'], out: [], show: false },
+    { in: ['4'], out: ['2', '3'], show: true },
 ]
 
 const slide = {
@@ -32,7 +32,6 @@ const scenes: SceneElement[] = [
             <Page position={{ x: 0, y: 0 }} size={{ width: 100, height: 100 }} text="A full page" />
         ),
         transitions: { ...slide },
-        showInSideBar: true,
     },
     {
         id: '2',
@@ -40,7 +39,6 @@ const scenes: SceneElement[] = [
             <Page position={{ x: 0, y: 5 }} size={{ width: 100, height: 40 }} text="A half page" />
         ),
         transitions: { ...slide },
-        showInSideBar: false,
     },
     {
         id: '3',
@@ -52,7 +50,6 @@ const scenes: SceneElement[] = [
             />
         ),
         transitions: { ...slide },
-        showInSideBar: false,
     },
     {
         id: '4',
@@ -64,7 +61,6 @@ const scenes: SceneElement[] = [
             />
         ),
         transitions: { ...slide },
-        showInSideBar: true,
     },
 ]
 

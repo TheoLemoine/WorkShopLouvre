@@ -22,12 +22,12 @@ export type SceneElement = {
     id: string
     elem: ReactElement
     transitions: any
-    showInSideBar: boolean
 }
 
 export type SceneEvent = {
     out: string[]
     in: string[]
+    show: boolean
 }
 
 export type State = {
