@@ -33,7 +33,6 @@ const Page: FunctionComponent<PageProps> = ({
                 suscipit eget, faucibus ut nisl.
             </p>
         </Popup>
-        <h1>{text}</h1>
         {children}
     </div>
 )
