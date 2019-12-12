@@ -4,13 +4,13 @@ import './pages.sass'
 type PageProps = {
     position: { x: number; y: number } | null
     size: { width: number; height: number } | null
-    text: string | null
+    children: null
 }
 
 const Page: FunctionComponent<PageProps> = ({
     position = { x: 0, y: 0 },
     size = { width: 100, height: 100 },
-    text = '',
+    children= null
 }) => (
     <div
         className="page"
@@ -21,7 +21,7 @@ const Page: FunctionComponent<PageProps> = ({
             height: `${size.height}vh`,
         }}
     >
-        <h1>{text}</h1>
+        {children}
     </div>
 )
 
