@@ -8,3 +8,10 @@
     height: 100vh
 
     overflow: hidden
+
+    > div
+        position: relative
+        $elements: 4
+        @for $i from 0 to $elements
+            &:nth-child(#{$i})
+                z-index: calc(#{$elements} - #{$i})
