@@ -1,30 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {FunctionComponent} from 'react';
 
-const Svg = (props) => {
-    const Element = props.el;
-    const className =
-        `svg` +
-        (props.className ? ` ${props.className}` : '');
+type SvgProps = {
+    className: string | null
+    Element: string
+    style: object | null
+    svg: string
+}
 
-    return (
-        <Element
-            style={props.style}
-            className={className}
-            dangerouslySetInnerHTML={{ __html: props.svg }}
-        />
-    );
-};
-
-Svg.propTypes = {
-    className: PropTypes.string,
-    el: PropTypes.string.isRequired,
-    style: PropTypes.object,
-    svg: PropTypes.string.isRequired,
-};
-
-Svg.defaultProps = {
-    el: 'span',
-};
+const Svg : FunctionComponent<SvgProps> = ({
+                                                className = null,
+                                                Element = 'span',
+                                                style = null,
+                                                svg= '',
+                                            }) => ( <Element className={`svg` + (className ? ` ${className}` : '')} dangerouslySetInnerHTML={{ __html: svg }}/>);
 
 export default Svg;
