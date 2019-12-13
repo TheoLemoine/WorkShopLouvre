@@ -31,7 +31,11 @@ const ScrollLineElement: FunctionComponent<ScrollLineElementProps> = ({ scene })
             {items =>
                 items &&
                 (props => (
-                    <div style={props} onWheel={scene.scrollable && stopPropagation} key={scene.id}>
+                    <div
+                        style={props}
+                        onWheel={scene.scrollable ? stopPropagation : null}
+                        key={scene.id}
+                    >
                         {<scene.component ref={scrollerRef} />}
                     </div>
                 ))
