@@ -3,6 +3,7 @@ import './pages.sass'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
 type PageProps = {
+    id?: string | null
     position?: { x?: number; y?: number } | null
     size?: { width?: number; height?: number } | null
     children: any

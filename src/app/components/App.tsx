@@ -35,7 +35,7 @@ const scenes: SceneElement[] = [
         id: '1',
         component: Home,
         transitions: { ...slide },
-        scrollable: true,
+        scrollable: true
     },
     {
         id: '2',
