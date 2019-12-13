@@ -34,12 +34,9 @@ const scenes: SceneElement[] = [
     {
         id: '1',
         elem: (
-            <Page position={{ x: 0, y: 0 }} size={{ width: 100 }}>
+            <Page position={{ x: 0, y: 0 }} size={{ width: 100, height: 100 }}>
                 <div className="app">
                     <div className="container">
-                        <Parallax y={[-20, 20]} className="ring">
-                            <Svg svg={ring} />
-                        </Parallax>
                         <Parallax y={[-50, 20]} className="circle">
                             <div className="circleInner" />
                         </Parallax>
@@ -47,27 +44,18 @@ const scenes: SceneElement[] = [
                     </div>
                     <p className="scroll">Scroll</p>
                     <div className="container">
-                        <Parallax y={[-20, 20]} className="ring">
-                            <Svg svg={ring} />
-                        </Parallax>
                         <Parallax y={[-50, 20]} className="circle">
                             <div className="circleInner" />
                         </Parallax>
                         <Svg className="hemispheres" svg={hemispheres} />
                     </div>
                     <div className="container">
-                        <Parallax y={[-20, 20]} className="ring">
-                            <Svg svg={ring} />
-                        </Parallax>
                         <Parallax y={[-50, 20]} className="circle">
                             <div className="circleInner" />
                         </Parallax>
                         <Svg className="hemispheres" svg={hemispheres} />
                     </div>
                     <div className="container">
-                        <Parallax y={[-20, 20]} className="ring">
-                            <Svg svg={ring} />
-                        </Parallax>
                         <Parallax y={[-50, 20]} className="circle">
                             <div className="circleInner" />
                         </Parallax>
