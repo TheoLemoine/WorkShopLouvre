@@ -4,12 +4,16 @@
     width: 100%
     height: auto
 
-    > div
+    > div // animated container
         position: relative
-        $elements: 4
-        @for $i from 0 to $elements
+        $nb_pages: 4
+        @for $i from 0 to $nb_pages
             &:nth-child(#{$i})
-                z-index: calc(#{$elements} - #{$i})
+                z-index: calc(#{$nb_pages} - #{$i})
+
+        > div // scroll page
+            overflow-y: auto
+            overflow-x: hidden
 
     &-bar
         position: fixed

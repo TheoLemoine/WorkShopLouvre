@@ -1,4 +1,9 @@
-import { ReactElement } from 'react'
+import {
+    FunctionComponent,
+    RefForwardingComponent,
+    ForwardRefExoticComponent,
+    RefAttributes,
+} from 'react'
 import createReducer from '../helpers/createReducer'
 
 // actions
@@ -20,8 +25,9 @@ export type Action = SetAction | PrevAction | NextAction
 // state
 export type SceneElement = {
     id: string
-    elem: ReactElement
+    component: FunctionComponent | ForwardRefExoticComponent<RefAttributes<HTMLElement>>
     transitions: any
+    scrollable: boolean
 }
 
 export type SceneEvent = {
