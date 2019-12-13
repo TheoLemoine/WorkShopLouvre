@@ -15,8 +15,8 @@ module.exports = {
                 to: path.resolve(__dirname, 'dist/index.html'),
             },
             {
-                from: path.resolve(__dirname, 'src/assets/'),
-                to: path.resolve(__dirname, 'dist/assets/'),
+                from: path.resolve(__dirname, 'src/app/assets/'),
+                to: path.resolve(__dirname, 'dist/app/assets/'),
             },
         ]),
     ],
@@ -29,11 +29,19 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'],
             },
             {
                 test: /\.svg$/,
-                use: 'svg-inline-loader',
+                loader: 'svg-inline-loader',
+            },
+            {
+                test: /\.(woff2?|ttf|otf|eot|svg)$/,
+                include: path.resolve(__dirname, 'src/app/assets/fonts'),
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                },
             },
         ],
     },

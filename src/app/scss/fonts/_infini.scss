@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'infini';
+    src: url('../../assets/fonts/Infini/Romain/infini-romain.eot');
+    src: url('../../assets/fonts/Infini/Romain/infini-romain.eot?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/Infini/Romain/infini-romain.woff2') format('woff2'),
+        url('../../assets/fonts/Infini/Romain/infini-romain.woff') format('woff'),
+        url('../../assets/fonts/Infini/Romain/infini-romain.ttf') format('truetype'),
+        url('../../assets/fonts/Infini/Romain/infini-romain.svg') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'infini';
+    src: url('../../assets/fonts/Infini/Gras/infini-gras.eot');
+    src: url('../../assets/fonts/Infini/Gras/infini-gras.eot?#iefix') format('embedded-opentype'),
+        url('../../assets/fonts/Infini/Gras/infini-gras.woff2') format('woff2'),
+        url('../../assets/fonts/Infini/Gras/infini-gras.woff') format('woff'),
+        url('../../assets/fonts/Infini/Gras/infini-gras.ttf') format('truetype'),
+        url('../../assets/fonts/Infini/Gras/infini-gras.svg') format('svg');
+    font-style: normal;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'infini';
+    src: url('../../assets/fonts/Infini/Italique/infini-italique.eot');
+    src: url('../../assets/fonts/Infini/Italique/infini-italique.eot?#iefix')
+            format('embedded-opentype'),
+        url('../../assets/fonts/Infini/Italique/infini-italique.woff2') format('woff2'),
+        url('../../assets/fonts/Infini/Italique/infini-italique.woff') format('woff'),
+        url('../../assets/fonts/Infini/Italique/infini-italique.ttf') format('truetype'),
+        url('../../assets/fonts/Infini/Italique/infini-italique.svg') format('svg');
+    font-style: italic;
+    font-weight: normal;
+}

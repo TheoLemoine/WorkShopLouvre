@@ -26,7 +26,7 @@ const slide = {
     leave: {
         transform: 'translate3d(0, -150px, 0)',
         opacity: 0,
-        display: 'none'
+        display: 'none',
     },
 }
 
