@@ -25,7 +25,7 @@ export type Action = SetAction | PrevAction | NextAction
 // state
 export type SceneElement = {
     id: string
-    component: FunctionComponent | ForwardRefExoticComponent<RefAttributes<HTMLElement>>
+    component: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
     transitions: any
     scrollable: boolean
 }
