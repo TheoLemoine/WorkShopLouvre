@@ -36,24 +36,28 @@ const scenes: SceneElement[] = [
         component: Home,
         transitions: { ...slide },
         scrollable: true,
+        arrow: true
     },
     {
         id: '2',
         component: HalfPage1,
         transitions: { ...slide },
         scrollable: false,
+        arrow: false
     },
     {
         id: '3',
         component: HalfPage2,
         transitions: { ...slide },
         scrollable: false,
+        arrow: false
     },
     {
         id: '4',
         component: LastPage,
         transitions: { ...slide },
         scrollable: false,
+        arrow: false
     },
 ]
 

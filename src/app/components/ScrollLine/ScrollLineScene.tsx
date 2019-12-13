@@ -4,14 +4,14 @@ import { Transition } from 'react-spring/renderprops'
 
 import './scrollLine.sass'
 import { useScrollLine } from './ScrollLine'
+import Arrow from "../Arrow/Arrow";
 
-export type ScrollLineElementProps = { scene: SceneElement }
+export type ScrollLineElementProps = { scene: SceneElement, next(): void }
 
-const ScrollLineElement: FunctionComponent<ScrollLineElementProps> = ({ scene }) => {
+const ScrollLineElement: FunctionComponent<ScrollLineElementProps> = ({ scene, next }) => {
     const [state] = useScrollLine()
 
     const stopPropagation = (e: SyntheticEvent) => {
-        console.dir(scrollerRef.current)
         if (
             scrollerRef.current &&
             scrollerRef.current.scrollTop <
@@ -37,6 +37,7 @@ const ScrollLineElement: FunctionComponent<ScrollLineElementProps> = ({ scene })
                         key={scene.id}
                     >
                         {<scene.component ref={scrollerRef} />}
+                        {scene.arrow ? <Arrow next={next} /> : null}
                     </div>
                 ))
             }

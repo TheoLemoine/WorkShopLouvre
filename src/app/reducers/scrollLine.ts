@@ -28,6 +28,7 @@ export type SceneElement = {
     component: ForwardRefExoticComponent<RefAttributes<HTMLElement>>
     transitions: any
     scrollable: boolean
+    arrow: boolean
 }
 
 export type SceneEvent = {

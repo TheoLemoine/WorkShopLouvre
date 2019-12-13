@@ -64,7 +64,7 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         <ScrollLineContext.Provider value={[state, dispatch]}>
             <div onWheel={handleScroll} id="scroll" className="scroll-line">
                 {scenes.map(scene => (
-                    <ScrollLineScene scene={scene} key={scene.id} />
+                    <ScrollLineScene scene={scene} key={scene.id} next={() =>  dispatch({ type: 'NEXT' })}/>
                 ))}
             </div>
             <ScrollLineBar />
