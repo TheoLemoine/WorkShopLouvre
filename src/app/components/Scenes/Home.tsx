@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import Page from './Page'
 
-const Home = forwardRef(() => (
+const Home = forwardRef<HTMLElement>(() => (
     <Page position={{ x: 0, y: 0 }} size={{ width: 100, height: 100 }}>
         <div id="one">
             <h1 className="title">Phryné</h1>

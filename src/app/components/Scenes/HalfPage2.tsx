@@ -1,8 +1,8 @@
-import React, { FunctionComponent, forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import Page from './Page'
 import Popup from '../Popup/Popup'
 
-const HalfPage2 = forwardRef(() => (
+const HalfPage2 = forwardRef<HTMLElement>(() => (
     <Page position={{ x: 0, y: 10 }} size={{ width: 100, height: 40 }}>
         <Popup button={{ x: 20, y: 20, size: 50 }} sheet={{ x: 23, y: 25, width: 20, height: 30 }}>
             <h1>Inside another popup</h1>

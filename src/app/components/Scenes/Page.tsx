@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef } from 'react'
+import React, { forwardRef, useRef, MutableRefObject } from 'react'
 import './pages.sass'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
@@ -24,7 +24,7 @@ const Page = forwardRef<HTMLElement, PageProps>(
                     width: size.width ? `${size.width}vw` : 'auto',
                     height: size.height ? `${size.height}vh` : 'auto',
                 }}
-                ref={scrollRef}
+                ref={scrollRef as MutableRefObject<HTMLDivElement>}
             >
                 <ParallaxProvider scrollContainer={scrollRef.current}>{children}</ParallaxProvider>
             </div>
