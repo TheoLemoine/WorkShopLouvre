@@ -47,9 +47,6 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         if (!isScrolling.current) {
             isScrolling.current = true
 
-            console.log(document.getElementById('scroll').clientHeight)
-            console.log(document.getElementById('scroll').clientHeight - window.screen.height)
-
             if (event.deltaY > 0 && window.scrollY > document.getElementById('scroll').clientHeight - window.screen.height) dispatch({ type: 'NEXT' })
             else if (event.deltaY < 0 && window.scrollY <= 0) dispatch({ type: 'PREV' })
 
