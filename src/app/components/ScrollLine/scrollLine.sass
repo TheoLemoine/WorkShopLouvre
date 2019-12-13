@@ -29,6 +29,24 @@
         opacity: 0.8
         z-index: 100
 
+        &-elements
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            align-items: flex-end
+
+            height: 60vh
+            width: 150px
+
+            z-index: 2
+
+        &-element
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 400px
+
         &-line
             position: relative
             left: 75px
@@ -44,15 +62,16 @@
             cursor: pointer
 
             &-container
-                position: relative
                 display: flex
-                flex-direction: column
-                justify-content: space-around
+                justify-content: center
                 align-items: center
-
-                height: 60vh
                 width: 150px
+                height: 150px
 
-                z-index: 2
+        &-label
+            font-family: 'roboto', sans-serif
+            font-size: 1.8rem
+            width: 250px
+            text-align: right
 
 

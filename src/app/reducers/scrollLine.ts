@@ -34,6 +34,7 @@ export type SceneEvent = {
     out: string[]
     in: string[]
     show: boolean
+    label?: string
 }
 
 export type State = {

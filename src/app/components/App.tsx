@@ -8,10 +8,10 @@ import HalfPage2 from './Scenes/HalfPage2'
 import LastPage from './Scenes/LastPage'
 
 const events: SceneEvent[] = [
-    { in: ['1'], out: [], show: true },
+    { in: ['1'], out: [], show: true, label: 'Home' },
     { in: ['2'], out: ['1'], show: false },
     { in: ['3'], out: [], show: false },
-    { in: ['4'], out: ['2', '3'], show: true },
+    { in: ['4'], out: ['2', '3'], show: true, label: 'Last Page' },
 ]
 
 const slide = {
@@ -35,7 +35,7 @@ const scenes: SceneElement[] = [
         id: '1',
         component: Home,
         transitions: { ...slide },
-        scrollable: true
+        scrollable: true,
     },
     {
         id: '2',

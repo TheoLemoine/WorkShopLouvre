@@ -9,6 +9,8 @@ html body {
     margin: 0;
     overflow: hidden;
 
+    background-color: #9f724b;
+
     h1,
     h2,
     h3,
@@ -16,7 +18,7 @@ html body {
     h5,
     h6,
     .title,
-    .subtitle{
+    .subtitle {
         font-family: 'infini', sans-serif;
         font-weight: bold;
         line-height: normal;
@@ -25,12 +27,12 @@ html body {
 
     h1,
     .title {
-        @include fontSize(96)
+        @include fontSize(96);
     }
 
     .subtitle {
         font-weight: normal;
-        @include fontSize(30)
+        @include fontSize(30);
     }
 
     .container {
