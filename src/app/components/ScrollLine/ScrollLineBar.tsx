@@ -8,12 +8,13 @@ const ScrollLineBar: FunctionComponent = () => {
     return (
         <div className="scroll-line-bar">
             <div className="scroll-line-bar-line" />
-            <div className="scroll-line-bar-ball-container">
+            <div className="scroll-line-bar-elements">
                 {state.events.map(
                     (ev, index) =>
                         ev.show && (
                             <ScrollLineBarBall
                                 isBig={state.currentEventId === index}
+                                label={ev.label || null}
                                 key={index}
                                 onClick={() => dispatch({ type: 'SET', index })}
                             ></ScrollLineBarBall>

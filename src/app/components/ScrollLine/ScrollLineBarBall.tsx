@@ -1,9 +1,13 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import { useSpring, animated } from 'react-spring'
 
-type ScrollLineBarBallProps = { isBig: boolean; onClick: () => void }
+type ScrollLineBarBallProps = { isBig: boolean; label: string; onClick: () => void }
 
-const ScrollLineBarBall: FunctionComponent<ScrollLineBarBallProps> = ({ isBig, onClick }) => {
+const ScrollLineBarBall: FunctionComponent<ScrollLineBarBallProps> = ({
+    isBig,
+    label,
+    onClick,
+}) => {
     const size = isBig ? 70 : 30
 
     const props = useSpring({
@@ -12,12 +16,29 @@ const ScrollLineBarBall: FunctionComponent<ScrollLineBarBallProps> = ({ isBig, o
         transform: `translate3d(${isBig ? `${-size / 2}px` : `${-size / 2}px`})`,
     })
 
+    const [Hovered, setHovered] = useState(false)
+
+    const labelProps = useSpring({
+        opacity: Hovered ? 1 : 0,
+    })
+
     return (
-        <animated.div
-            style={props}
-            className="scroll-line-bar-ball"
-            onClick={onClick}
-        ></animated.div>
+        <div className="scroll-line-bar-element">
+            {label && (
+                <animated.div style={labelProps} className="scroll-line-bar-label">
+                    {label}
+                </animated.div>
+            )}
+            <div className="scroll-line-bar-ball-container">
+                <animated.div
+                    style={props}
+                    className="scroll-line-bar-ball"
+                    onClick={onClick}
+                    onMouseEnter={() => setHovered(true)}
+                    onMouseLeave={() => setHovered(false)}
+                ></animated.div>
+            </div>
+        </div>
     )
 }
 

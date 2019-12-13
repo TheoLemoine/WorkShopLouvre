@@ -30,6 +30,7 @@ const PopupSheet: FunctionComponent<PopupSheetProps> = ({
                 }}
                 className="popup-sheet"
                 onClick={e => e.stopPropagation()}
+                onWheel={e => e.stopPropagation()}
             >
                 <div
                     style={{

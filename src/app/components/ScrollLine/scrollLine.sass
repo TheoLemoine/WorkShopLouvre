@@ -1,15 +1,21 @@
 
 .scroll-line
     position: absolute
-    width: 100%
-    height: auto
+    width: 100vw
+    height: 100vh
 
-    > div
+    > div // animated container
         position: relative
-        $elements: 4
-        @for $i from 0 to $elements
+        $nb_pages: 4
+        @for $i from 0 to $nb_pages
             &:nth-child(#{$i})
-                z-index: calc(#{$elements} - #{$i})
+                z-index: calc(#{$nb_pages} - #{$i})
+
+        > div // scroll page
+            overflow-y: auto
+            overflow-x: hidden
+            &.arrow
+                overflow: initial
 
     &-bar
         position: fixed
@@ -23,7 +29,25 @@
         width: 15vw
 
         opacity: 0.8
-        z-index: 10
+        z-index: 100
+
+        &-elements
+            position: relative
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            align-items: flex-end
+
+            height: 60vh
+            width: 150px
+
+            z-index: 2
+
+        &-element
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 400px
 
         &-line
             position: relative
@@ -37,14 +61,19 @@
         &-ball
             background: white
             border-radius: 100%
+            cursor: pointer
 
             &-container
                 display: flex
-                flex-direction: column
-                justify-content: space-around
+                justify-content: center
                 align-items: center
-
-                height: 60vh
                 width: 150px
+                height: 150px
+
+        &-label
+            font-family: 'roboto', sans-serif
+            font-size: 1.8rem
+            width: 250px
+            text-align: right
 
 

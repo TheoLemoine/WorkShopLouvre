@@ -6,7 +6,11 @@
 @import 'common';
 
 // Components
-@import "components/svg";
+@import 'components/svg';
+@import "components/arrow";
+// Fonts
+@import 'fonts/infini';
 
 // Pages
-@import "page/app";
+@import 'page/app';
+@import 'page/one';

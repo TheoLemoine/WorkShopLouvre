@@ -1,22 +1,38 @@
 html,
 body,
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
 }
 
 html body {
     margin: 0;
+    overflow: hidden;
+
+    background-color: #9f724b;
 
     h1,
     h2,
     h3,
     h4,
     h5,
-    h6 {
-        font-family: 'Lato', sans-serif;
+    h6,
+    .title,
+    .subtitle {
+        font-family: 'infini', sans-serif;
         font-weight: bold;
         line-height: normal;
+        margin: 0;
+    }
+
+    h1,
+    .title {
+        @include fontSize(96);
+    }
+
+    .subtitle {
+        font-weight: normal;
+        @include fontSize(30);
     }
 
     .container {

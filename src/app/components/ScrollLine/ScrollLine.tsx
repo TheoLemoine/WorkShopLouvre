@@ -7,9 +7,10 @@ import React, {
     useContext,
     Dispatch,
 } from 'react'
+
 import scrollLine, { SceneEvent, SceneElement, State, Action } from '../../reducers/scrollLine'
-import { Transition } from 'react-spring/renderprops'
 import ScrollLineBar from './ScrollLineBar'
+import ScrollLineScene from './ScrollLineScene'
 
 import './scrollLine.sass'
 
@@ -47,10 +48,12 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         if (!isScrolling.current) {
             isScrolling.current = true
 
-            console.log(document.getElementById('scroll').clientHeight)
-            console.log(document.getElementById('scroll').clientHeight - window.screen.height)
-
-            if (event.deltaY > 0 && window.scrollY > document.getElementById('scroll').clientHeight - window.screen.height) dispatch({ type: 'NEXT' })
+            if (
+                event.deltaY > 0 &&
+                window.scrollY >
+                    document.getElementById('scroll').clientHeight - window.screen.height
+            )
+                dispatch({ type: 'NEXT' })
             else if (event.deltaY < 0 && window.scrollY <= 0) dispatch({ type: 'PREV' })
 
             scrollTimeout.current = window.setTimeout(() => (isScrolling.current = false), 600)
@@ -61,13 +64,7 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         <ScrollLineContext.Provider value={[state, dispatch]}>
             <div onWheel={handleScroll} id="scroll" className="scroll-line">
                 {scenes.map(scene => (
-                    <Transition
-                        key={scene.id}
-                        items={state.currentScenesIds.find(id => id === scene.id)}
-                        {...scene.transitions}
-                    >
-                        {display => display && (props => <div style={props}>{scene.elem}</div>)}
-                    </Transition>
+                    <ScrollLineScene scene={scene} key={scene.id} next={() =>  dispatch({ type: 'NEXT' })}/>
                 ))}
             </div>
             <ScrollLineBar />
