@@ -1,13 +1,15 @@
 
 .scroll-line
     position: absolute
-    left: 0
-    top: 0
+    width: 100%
+    height: auto
 
-    width: 100vw
-    height: 100vh
-
-    overflow: hidden
+    > div
+        position: relative
+        $elements: 4
+        @for $i from 0 to $elements
+            &:nth-child(#{$i})
+                z-index: calc(#{$elements} - #{$i})
 
     &-bar
         position: absolute
@@ -21,6 +23,7 @@
         width: 15vw
 
         opacity: 0.8
+        z-index: 10
 
         &-line
             position: relative

@@ -26,6 +26,7 @@ const slide = {
     leave: {
         transform: 'translate3d(0, -150px, 0)',
         opacity: 0,
+        display: 'none'
     },
 }
 
@@ -33,7 +34,7 @@ const scenes: SceneElement[] = [
     {
         id: '1',
         elem: (
-            <Page position={{ x: 0, y: 0 }} size={{ width: 100, height: 100 }}>
+            <Page position={{ x: 0, y: 0 }} size={{ width: 100 }}>
                 <div className="app">
                     <div className="container">
                         <Parallax y={[-20, 20]} className="ring">
@@ -89,7 +90,7 @@ const scenes: SceneElement[] = [
     {
         id: '3',
         elem: (
-            <Page position={{ x: 0, y: 50 }} size={{ width: 100, height: 40 }}>
+            <Page position={{ x: 0, y: 10 }} size={{ width: 100, height: 40 }}>
                 <h1>A other half page</h1>
             </Page>
         ),

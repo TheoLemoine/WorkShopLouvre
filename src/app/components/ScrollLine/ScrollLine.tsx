@@ -47,8 +47,11 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         if (!isScrolling.current) {
             isScrolling.current = true
 
-            if (event.deltaY > 0) dispatch({ type: 'NEXT' })
-            else dispatch({ type: 'PREV' })
+            console.log(document.getElementById('scroll').clientHeight)
+            console.log(document.getElementById('scroll').clientHeight - window.screen.height)
+
+            if (event.deltaY > 0 && window.scrollY > document.getElementById('scroll').clientHeight - window.screen.height) dispatch({ type: 'NEXT' })
+            else if (event.deltaY < 0 && window.scrollY <= 0) dispatch({ type: 'PREV' })
 
             scrollTimeout.current = window.setTimeout(() => (isScrolling.current = false), 600)
         }
@@ -56,7 +59,7 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
 
     return (
         <ScrollLineContext.Provider value={[state, dispatch]}>
-            <div onWheel={handleScroll} className="scroll-line">
+            <div onWheel={handleScroll} id="scroll" className="scroll-line">
                 {scenes.map(scene => (
                     <Transition
                         key={scene.id}
