@@ -2,11 +2,10 @@ import React, { FunctionComponent, SyntheticEvent, useRef } from 'react'
 import { SceneElement } from '../../reducers/scrollLine'
 import { Transition } from 'react-spring/renderprops'
 
-import './scrollLine.sass'
 import { useScrollLine } from './ScrollLine'
-import Arrow from "../Arrow/Arrow";
+import Arrow from '../Arrow/Arrow'
 
-export type ScrollLineElementProps = { scene: SceneElement, next(): void }
+export type ScrollLineElementProps = { scene: SceneElement; next(): void }
 
 const ScrollLineElement: FunctionComponent<ScrollLineElementProps> = ({ scene, next }) => {
     const [state] = useScrollLine()

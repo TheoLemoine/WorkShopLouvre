@@ -5,7 +5,7 @@
     "main": "src/app/index.js",
     "license": "MIT",
     "scripts": {
-        "start": "webpack-dev-server --config webpack.dev.js",
+        "start": "webpack-dev-server --config webpack.dev.js --progress --colors --host 0.0.0.0",
         "build": "webpack --config webpack.prod.js",
         "deploy": "webpack --config webpack.prod.js && surge ./dist workshop-phryne.surge.sh"
     },

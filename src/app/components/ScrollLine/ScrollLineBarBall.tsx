@@ -8,7 +8,7 @@ const ScrollLineBarBall: FunctionComponent<ScrollLineBarBallProps> = ({
     label,
     onClick,
 }) => {
-    const size = isBig ? 70 : 30
+    const size = isBig ? 40 : 30
 
     const props = useSpring({
         width: isBig ? `${size}px` : `${size}px`,

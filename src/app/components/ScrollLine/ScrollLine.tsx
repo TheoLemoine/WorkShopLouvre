@@ -6,13 +6,14 @@ import React, {
     createContext,
     useContext,
     Dispatch,
+    WheelEvent,
+    useCallback,
 } from 'react'
+import TouchObserver from '../../helpers/touchObserver'
 
 import scrollLine, { SceneEvent, SceneElement, State, Action } from '../../reducers/scrollLine'
 import ScrollLineBar from './ScrollLineBar'
 import ScrollLineScene from './ScrollLineScene'
-
-import './scrollLine.sass'
 
 export type ScrollLineProps = { scenes: SceneElement[]; events: SceneEvent[] }
 export type ScrollLineContextValue = [State, Dispatch<Action>]
@@ -44,27 +45,42 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         }
     }, [scrollTimeout])
 
-    const handleScroll = (event: any) => {
-        if (!isScrolling.current) {
-            isScrolling.current = true
+    const scrollIf = useCallback(
+        (up: boolean, down: boolean) => {
+            if (!isScrolling.current) {
+                isScrolling.current = true
 
-            if (
-                event.deltaY > 0 &&
-                window.scrollY >
-                    document.getElementById('scroll').clientHeight - window.screen.height
-            )
-                dispatch({ type: 'NEXT' })
-            else if (event.deltaY < 0 && window.scrollY <= 0) dispatch({ type: 'PREV' })
+                if (down) dispatch({ type: 'NEXT' })
+                else if (up) dispatch({ type: 'PREV' })
 
-            scrollTimeout.current = window.setTimeout(() => (isScrolling.current = false), 600)
-        }
+                scrollTimeout.current = window.setTimeout(() => (isScrolling.current = false), 600)
+            }
+        },
+        [isScrolling, scrollTimeout, dispatch]
+    )
+
+    const handleScroll = (event: WheelEvent) => {
+        scrollIf(event.deltaY < 0, event.deltaY > 0)
     }
+
+    const { current: touchObserver } = useRef<TouchObserver>(new TouchObserver())
+
+    touchObserver.addListener('dragUp', () => {
+        scrollIf(true, false)
+    })
+    touchObserver.addListener('dragDown', () => {
+        scrollIf(false, true)
+    })
 
     return (
         <ScrollLineContext.Provider value={[state, dispatch]}>
-            <div onWheel={handleScroll} id="scroll" className="scroll-line">
+            <div onWheel={handleScroll} {...touchObserver.reactBind()} className="scroll-line">
                 {scenes.map(scene => (
-                    <ScrollLineScene scene={scene} key={scene.id} next={() =>  dispatch({ type: 'NEXT' })}/>
+                    <ScrollLineScene
+                        scene={scene}
+                        key={scene.id}
+                        next={() => dispatch({ type: 'NEXT' })}
+                    />
                 ))}
             </div>
             <ScrollLineBar />

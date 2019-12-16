@@ -34,3 +34,15 @@
     font-style: italic;
     font-weight: normal;
 }
+
+@font-face {
+    font-family: 'infini-pictos';
+    src: url('../assets/fonts/Infini/Pictos/infini-picto.eot');
+    src: url('../assets/fonts/Infini/Pictos/infini-picto.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Infini/Pictos/infini-picto.woff2') format('woff2'),
+        url('../assets/fonts/Infini/Pictos/infini-picto.woff') format('woff'),
+        url('../assets/fonts/Infini/Pictos/infini-picto.ttf') format('truetype'),
+        url('../assets/fonts/Infini/Pictos/infini-picto.svg') format('svg');
+    font-style: normal;
+    font-weight: normal;
+}

@@ -43,6 +43,14 @@ module.exports = {
                     name: '[path][name].[ext]',
                 },
             },
+            {
+                test: /\.(jpg|jpeg|png)$/,
+                include: path.resolve(__dirname, 'src/app/assets/img'),
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]',
+                },
+            },
         ],
     },
     resolve: {
