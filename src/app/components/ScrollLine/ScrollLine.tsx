@@ -15,8 +15,6 @@ import scrollLine, { SceneEvent, SceneElement, State, Action } from '../../reduc
 import ScrollLineBar from './ScrollLineBar'
 import ScrollLineScene from './ScrollLineScene'
 
-import './scrollLine.sass'
-
 export type ScrollLineProps = { scenes: SceneElement[]; events: SceneEvent[] }
 export type ScrollLineContextValue = [State, Dispatch<Action>]
 

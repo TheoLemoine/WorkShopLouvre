@@ -6,12 +6,10 @@ import React, {
     Dispatch,
     SetStateAction,
 } from 'react'
-import { useTransition, animated } from 'react-spring'
+import { useTransition } from 'react-spring'
 
 import PopupButton from './PopupButton'
 import PopupSheet from './PopupSheet'
-
-import './popup.sass'
 
 type PopupProps = {
     button: {

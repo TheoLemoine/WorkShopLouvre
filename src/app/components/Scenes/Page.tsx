@@ -1,5 +1,4 @@
 import React, { forwardRef, useRef, MutableRefObject } from 'react'
-import './pages.sass'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
 type PageProps = {
