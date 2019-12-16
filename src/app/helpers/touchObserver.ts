@@ -3,11 +3,9 @@ import { TouchEvent } from 'react'
 type touchEvents = 'dragDown' | 'dragUp' | 'dragLeft' | 'dragRight'
 
 class TouchObserver {
-    constructor(sensibility: number = 50) {
+    constructor() {
         this.ongoingTouches = new Map()
         this.listeners = new Map()
-
-        this.sensibility = sensibility
     }
 
     reactBind() {
@@ -21,8 +19,6 @@ class TouchObserver {
 
     /** handling touches updates */
     public ongoingTouches: Map<number, { x: number; y: number }>
-
-    public sensibility: number
 
     onTouchStart(event: TouchEvent) {
         for (let i = 0; i < event.touches.length; i++) {
