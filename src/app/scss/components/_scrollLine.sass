@@ -9,16 +9,21 @@
     background-size: cover
     background-repeat: no-repeat
 
+    overflow: hidden
+
     > div // animated container
         position: relative
         $nb_pages: 4
         @for $i from 0 to $nb_pages
             &:nth-child(#{$i})
                 z-index: calc(#{$nb_pages} - #{$i})
+        
+        display: flex
+        justify-content: center
+        align-items: center
 
         > div // scroll page
-            overflow-y: auto
-            overflow-x: hidden
+            overflow-y: visible
             &.arrow
                 overflow: initial
 
@@ -33,7 +38,6 @@
         height: 100vh
         width: 15vw
 
-        opacity: 0.8
         z-index: 100
 
         &-elements
@@ -54,44 +58,18 @@
             align-items: center
             width: 400px
 
-        &-next
-
-            height: 200px
-            width: 150px
-            margin-right: 100px
-
-            display: flex
-            flex-direction: column
-            justify-content: space-around
-            align-items: flex-end
-
-            font-size: 1.4rem
-            font-weight: bold
-            text-align: right
-
-            cursor: pointer
-
-            &::after
-                content: '\2193'
-                font-family: 'infini'
-                font-size: 3.6rem
-                margin-right: 1rem
-                color: $primary
-
-
-
         &-line
             position: relative
             left: 76.5px
             bottom: 0
 
-            width: 3px
+            min-width: 2px
             height: 60vh
 
-            background: $primary
+            background: $secondary
 
         &-ball
-            background: $primary
+            background: $secondary
             border-radius: 100%
             cursor: pointer
 

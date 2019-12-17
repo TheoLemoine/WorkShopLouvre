@@ -3,15 +3,11 @@ import React from 'react'
 import ScrollLine from './ScrollLine/ScrollLine'
 import { SceneElement, SceneEvent } from '../reducers/scrollLine'
 import Home from './Scenes/Home'
-import HalfPage1 from './Scenes/HalfPage1'
-import HalfPage2 from './Scenes/HalfPage2'
-import LastPage from './Scenes/LastPage'
+import Presentation from './Scenes/Presentation'
 
 const events: SceneEvent[] = [
     { in: ['1'], out: [], show: true, label: 'Home' },
-    { in: ['2'], out: ['1'], show: false },
-    { in: ['3'], out: [], show: false },
-    { in: ['4'], out: ['2', '3'], show: true, label: 'Last Page' },
+    { in: ['2'], out: ['1'], show: true, label: 'Présentation' },
 ]
 
 const slide = {
@@ -35,29 +31,15 @@ const scenes: SceneElement[] = [
         id: '1',
         component: Home,
         transitions: { ...slide },
-        scrollable: true,
-        arrow: true
+        scrollable: false,
+        arrow: true,
     },
     {
         id: '2',
-        component: HalfPage1,
+        component: Presentation,
         transitions: { ...slide },
         scrollable: false,
-        arrow: false
-    },
-    {
-        id: '3',
-        component: HalfPage2,
-        transitions: { ...slide },
-        scrollable: false,
-        arrow: false
-    },
-    {
-        id: '4',
-        component: LastPage,
-        transitions: { ...slide },
-        scrollable: false,
-        arrow: false
+        arrow: false,
     },
 ]
 

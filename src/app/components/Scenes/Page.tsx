@@ -20,8 +20,8 @@ const Page = forwardRef<HTMLElement, PageProps>(
                 style={{
                     left: position.x ? `${position.x}vw` : 'auto',
                     top: position.y ? `${position.y}vh` : 'auto',
-                    width: size.width ? `${size.width}vw` : 'auto',
-                    height: size.height ? `${size.height}vh` : 'auto',
+                    width: size.width ? `${size.width}px` : 'auto',
+                    height: size.height ? `${size.height}px` : 'auto',
                 }}
                 ref={scrollRef as MutableRefObject<HTMLDivElement>}
             >

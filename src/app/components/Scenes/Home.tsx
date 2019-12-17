@@ -6,10 +6,8 @@ const Home = forwardRef<HTMLElement>(() => {
     const noiseX = useNoise(25, 0.01)
     const noiseY = useNoise(25, 0.01)
 
-    console.log(noiseX, noiseY)
-
     return (
-        <Page position={{ x: 0, y: 0 }} size={{ width: 100, height: 100 }}>
+        <Page position={{ x: 0, y: 0 }} size={{ width: 1100, height: 800 }}>
             <div id="one">
                 <h1
                     className="title"
