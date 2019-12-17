@@ -18,8 +18,8 @@ const JugementEnd = forwardRef<HTMLElement>(() => {
             <Image left={0} top={20} height={70} src="lesjuges/cadre.svg" />
             <Image
                 left={25}
-                bottom={0}
-                height={75}
+                bottom={-10}
+                height={100}
                 posOffset={offset1}
                 src="lesjuges/lesjuges.png"
             />

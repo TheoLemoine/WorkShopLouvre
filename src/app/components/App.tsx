@@ -41,7 +41,7 @@ const scenes: SceneElement[] = [
         transitions: { ...slide },
         scrollable: true,
         arrow: false,
-        line: false
+        line: false,
     },
     {
         id: 'pres',
@@ -49,7 +49,7 @@ const scenes: SceneElement[] = [
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
-        line: true
+        line: true,
     },
     {
         id: 'pres-text',
@@ -57,6 +57,7 @@ const scenes: SceneElement[] = [
         transitions: { ...slide },
         scrollable: false,
         arrow: true,
+        line: true,
     },
     {
         id: 'jugement',
@@ -64,6 +65,7 @@ const scenes: SceneElement[] = [
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
+        line: true,
     },
     {
         id: 'jugement-devet',
@@ -71,6 +73,7 @@ const scenes: SceneElement[] = [
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
+        line: true,
     },
     {
         id: 'jugement-end',
@@ -78,6 +81,7 @@ const scenes: SceneElement[] = [
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
+        line: true,
     },
 ]
 
