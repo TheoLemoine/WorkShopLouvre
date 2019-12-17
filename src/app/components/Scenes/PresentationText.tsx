@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import TextPage from './TextPage'
+import TextPage from './Page/TextPage'
 
 const PresentationText = forwardRef<HTMLElement>(() => {
     return (

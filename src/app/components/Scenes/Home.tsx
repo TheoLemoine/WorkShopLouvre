@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import Page from './Page'
+import Page from './Page/Page'
 import useNoise from '../../helpers/useNoise'
 
 const Home = forwardRef<HTMLElement>(() => {
@@ -7,7 +7,7 @@ const Home = forwardRef<HTMLElement>(() => {
     const noiseY = useNoise(25, 0.01)
 
     return (
-        <Page position={{ x: 0, y: 0 }} size={{ width: 1100, height: 800 }}>
+        <Page>
             <div id="one">
                 <h1
                     className="title"

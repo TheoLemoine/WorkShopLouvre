@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import Page from './Page'
+import Page from './Page/Page'
 import useNoise from '../../helpers/useNoise'
 import Image from './Image'
 import useMouseParalax from '../../helpers/useMouseParalax'
@@ -14,7 +14,7 @@ const Presentation = forwardRef<HTMLElement>(() => {
     }
 
     return (
-        <Page position={{ x: 0, y: 0 }} size={{ width: 1100, height: 800 }}>
+        <Page>
             <Image left={-20} top={-10} width={130} src="02-fond.png" />
 
             <Image left={0} top={20} width={50} src="presentation/01-fresque.png" />

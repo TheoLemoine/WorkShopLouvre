@@ -5,11 +5,13 @@ import { SceneElement, SceneEvent } from '../reducers/scrollLine'
 import Home from './Scenes/Home'
 import Presentation from './Scenes/Presentation'
 import PresentationText from './Scenes/PresentationText'
+import Jugement from './Scenes/Jugement'
 
 const events: SceneEvent[] = [
     { in: ['homepage'], out: [], show: true, label: 'Home' },
     { in: ['pres'], out: ['homepage'], show: true, label: 'Présentation' },
     { in: ['pres-text'], out: ['pres'], show: false },
+    { in: ['jugement'], out: ['pres-text'], show: true, label: 'le Jugement' },
 ]
 
 const slide = {
@@ -46,6 +48,13 @@ const scenes: SceneElement[] = [
     {
         id: 'pres-text',
         component: PresentationText,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: true,
+    },
+    {
+        id: 'jugement',
+        component: Jugement,
         transitions: { ...slide },
         scrollable: false,
         arrow: false,

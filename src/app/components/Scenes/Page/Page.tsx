@@ -3,13 +3,12 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 
 type PageProps = {
     id?: string | null
-    position?: { x?: number; y?: number } | null
     size?: { width?: number; height?: number } | null
     children: any
 }
 
 const Page = forwardRef<HTMLElement, PageProps>(
-    ({ position = { x: 0, y: 0 }, size = { width: 100, height: 100 }, children = null }, ref) => {
+    ({ size = { width: 1100, height: 800 }, children = null }, ref) => {
         const scrollRef = useRef<HTMLElement>(null)
 
         if (ref) (ref as any).current = scrollRef.current
@@ -18,10 +17,11 @@ const Page = forwardRef<HTMLElement, PageProps>(
             <div
                 className="page"
                 style={{
-                    left: position.x ? `${position.x}vw` : 'auto',
-                    top: position.y ? `${position.y}vh` : 'auto',
-                    width: size.width ? `${size.width}px` : 'auto',
-                    height: size.height ? `${size.height}px` : 'auto',
+                    position: 'absolute',
+                    top: `calc(50% - ${size.height / 2}px`,
+                    left: `calc(50% - ${size.width / 2}px`,
+                    width: size.width,
+                    height: size.height,
                 }}
                 ref={scrollRef as MutableRefObject<HTMLDivElement>}
             >
