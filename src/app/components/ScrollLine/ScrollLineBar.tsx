@@ -20,10 +20,6 @@ const ScrollLineBar: FunctionComponent = () => {
                             ></ScrollLineBarBall>
                         )
                 )}
-                <div
-                    className="scroll-line-bar-next"
-                    onClick={() => dispatch({ type: 'NEXT' })}
-                ></div>
             </div>
         </div>
     )

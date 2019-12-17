@@ -29,6 +29,7 @@ export type SceneElement = {
     transitions: any
     scrollable: boolean
     arrow: boolean
+    line?: boolean
 }
 
 export type SceneEvent = {

@@ -12,15 +12,19 @@
     overflow: hidden
 
     > div // animated container
-        position: relative
-        $nb_pages: 4
-        @for $i from 0 to $nb_pages
-            &:nth-child(#{$i})
-                z-index: calc(#{$nb_pages} - #{$i})
+        position: absolute
+        $nb_pages: 10
         
         display: flex
         justify-content: center
         align-items: center
+
+        width: 100vw
+        height: 100vh
+        
+        @for $i from 0 to $nb_pages
+            &:nth-child(#{$i})
+                z-index: calc(#{$i})
 
         > div // scroll page
             overflow-y: visible
@@ -30,7 +34,7 @@
     &-bar
         position: fixed
         right: 0
-
+        top: 0
         display: flex
         align-items: flex-end
         justify-content: center
@@ -47,7 +51,7 @@
             justify-content: space-around
             align-items: flex-end
 
-            height: 60vh
+            height: 70vh
             width: 150px
 
             z-index: 2
@@ -58,13 +62,16 @@
             align-items: center
             width: 400px
 
+            &:last-child
+                margin-bottom: 25vh 
+
         &-line
             position: relative
-            left: 76.5px
+            left: 76px
             bottom: 0
 
             min-width: 2px
-            height: 60vh
+            height: 75vh
 
             background: $secondary
 

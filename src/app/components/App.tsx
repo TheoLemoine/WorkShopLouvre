@@ -4,10 +4,18 @@ import ScrollLine from './ScrollLine/ScrollLine'
 import { SceneElement, SceneEvent } from '../reducers/scrollLine'
 import Home from './Scenes/Home'
 import Presentation from './Scenes/Presentation'
+import PresentationText from './Scenes/PresentationText'
+import Jugement from './Scenes/Jugement'
+import JugementDevet from './Scenes/JugementDevet'
+import JugementEnd from './Scenes/JugementEnd'
 
 const events: SceneEvent[] = [
-    { in: ['1'], out: [], show: true, label: 'Home' },
-    { in: ['2'], out: ['1'], show: true, label: 'Présentation' },
+    { in: ['homepage'], out: [], show: false, label: 'Home' },
+    { in: ['pres'], out: ['homepage'], show: true, label: 'Présentation' },
+    { in: ['pres-text'], out: ['pres'], show: false },
+    { in: ['jugement'], out: ['pres-text'], show: true, label: 'le Jugement' },
+    { in: ['jugement-devet'], out: [], show: false },
+    { in: ['jugement-end'], out: ['jugement', 'jugement-devet'], show: true, label: 'la Sentence' },
 ]
 
 const slide = {
@@ -28,15 +36,45 @@ const slide = {
 
 const scenes: SceneElement[] = [
     {
-        id: '1',
+        id: 'homepage',
         component: Home,
+        transitions: { ...slide },
+        scrollable: true,
+        arrow: false,
+        line: false
+    },
+    {
+        id: 'pres',
+        component: Presentation,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: false,
+        line: true
+    },
+    {
+        id: 'pres-text',
+        component: PresentationText,
         transitions: { ...slide },
         scrollable: false,
         arrow: true,
     },
     {
-        id: '2',
-        component: Presentation,
+        id: 'jugement',
+        component: Jugement,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: false,
+    },
+    {
+        id: 'jugement-devet',
+        component: JugementDevet,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: false,
+    },
+    {
+        id: 'jugement-end',
+        component: JugementEnd,
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
