@@ -38,18 +38,18 @@ const Popup: FunctionComponent<PopupProps> = ({ button, sheet, children }) => {
     const transition = useTransition(active, null, {
         from: {
             opacity: 0,
-            width: '0vw',
-            height: '0vh',
+            width: '0%',
+            height: '0%',
         },
         enter: {
             opacity: 1,
-            width: `${sheet.width}vw`,
-            height: `${sheet.height}vh`,
+            width: `${sheet.width}%`,
+            height: `${sheet.height}%`,
         },
         leave: {
             opacity: 0,
-            width: '0vw',
-            height: '0vh',
+            width: '0%',
+            height: '0%',
         },
     })
 

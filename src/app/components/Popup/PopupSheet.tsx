@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useRef } from 'react'
 import { usePopup } from './Popup'
 import { animated } from 'react-spring'
 
@@ -19,13 +19,14 @@ const PopupSheet: FunctionComponent<PopupSheetProps> = ({
     children,
 }) => {
     const [active, setActive] = usePopup()
+    const containerRef = useRef<HTMLDivElement>()
 
     return (
-        <div onClick={() => setActive(false)} className="popup-sheet-container">
+        <div onClick={() => setActive(false)} className="popup-sheet-container" ref={containerRef}>
             <animated.div
                 style={{
-                    top: `${y}vh`,
-                    left: `${x}vw`,
+                    top: `${y}%`,
+                    left: `${x}%`,
                     ...transitionProps,
                 }}
                 className="popup-sheet"
@@ -33,10 +34,16 @@ const PopupSheet: FunctionComponent<PopupSheetProps> = ({
                 onWheel={e => e.stopPropagation()}
             >
                 <div
-                    style={{
-                        height: `${height - 1}vh`,
-                        width: `${width - 1}vw`,
-                    }}
+                    style={
+                        containerRef.current
+                            ? {
+                                  height: `calc(${containerRef.current.offsetHeight *
+                                      (height / 100)}px - 1.3rem)`,
+                                  width: `calc(${containerRef.current.offsetWidth *
+                                      (width / 100)}px - 1.3rem)`,
+                              }
+                            : null
+                    }
                 >
                     {children}
                 </div>
