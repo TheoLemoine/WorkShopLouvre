@@ -6,12 +6,16 @@ import Home from './Scenes/Home'
 import Presentation from './Scenes/Presentation'
 import PresentationText from './Scenes/PresentationText'
 import Jugement from './Scenes/Jugement'
+import JugementDevet from './Scenes/JugementDevet'
+import JugementEnd from './Scenes/JugementEnd'
 
 const events: SceneEvent[] = [
     { in: ['homepage'], out: [], show: true, label: 'Home' },
     { in: ['pres'], out: ['homepage'], show: true, label: 'Présentation' },
     { in: ['pres-text'], out: ['pres'], show: false },
     { in: ['jugement'], out: ['pres-text'], show: true, label: 'le Jugement' },
+    { in: ['jugement-devet'], out: [], show: false },
+    { in: ['jugement-end'], out: ['jugement', 'jugement-devet'], show: true, label: 'la Sentence' },
 ]
 
 const slide = {
@@ -55,6 +59,20 @@ const scenes: SceneElement[] = [
     {
         id: 'jugement',
         component: Jugement,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: false,
+    },
+    {
+        id: 'jugement-devet',
+        component: JugementDevet,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: false,
+    },
+    {
+        id: 'jugement-end',
+        component: JugementEnd,
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
