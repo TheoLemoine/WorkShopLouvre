@@ -2,9 +2,9 @@ import React, { FunctionComponent, SyntheticEvent, useRef } from 'react'
 import { SceneElement } from '../../reducers/scrollLine'
 import { Transition } from 'react-spring/renderprops'
 
-import {ScrollLineContext, useScrollLine} from './ScrollLine'
+import { ScrollLineContext, useScrollLine } from './ScrollLine'
 import Arrow from '../Arrow/Arrow'
-import ScrollLineBar from "./ScrollLineBar";
+import ScrollLineBar from './ScrollLineBar'
 
 export type ScrollLineElementProps = { scene: SceneElement; next(): void }
 
@@ -38,7 +38,6 @@ const ScrollLineElement: FunctionComponent<ScrollLineElementProps> = ({ scene, n
                     >
                         {<scene.component ref={scrollerRef} />}
                         {scene.arrow ? <Arrow next={next} /> : null}
-                        {scene.line !== false ? <ScrollLineBar /> : null}
                     </div>
                 ))
             }

@@ -72,6 +72,12 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         scrollIf(false, true)
     })
 
+    const displayLine =
+        scenes
+            .filter(sc => state.currentScenesIds.find(id => id === sc.id))
+            .map(sc => (sc.line === null ? true : sc.line))
+            .find(line => line) !== undefined
+
     return (
         <ScrollLineContext.Provider value={[state, dispatch]}>
             <div onWheel={handleScroll} {...touchObserver.reactBind()} className="scroll-line">
@@ -83,6 +89,7 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
                     />
                 ))}
             </div>
+            {displayLine && <ScrollLineBar />}
         </ScrollLineContext.Provider>
     )
 }
