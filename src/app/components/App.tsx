@@ -8,14 +8,30 @@ import PresentationText from './Scenes/PresentationText'
 import Jugement from './Scenes/Jugement'
 import JugementDevet from './Scenes/JugementDevet'
 import JugementEnd from './Scenes/JugementEnd'
+import JugementText from './Scenes/JugementText'
+import JugementDevetText from './Scenes/JugementDevetText'
+import JugementEndText from './Scenes/JugementEndText'
 
 const events: SceneEvent[] = [
     { in: ['homepage'], out: [], show: false, label: 'Home' },
-    { in: ['pres'], out: ['homepage'], show: true, label: 'Présentation' },
-    { in: ['pres-text'], out: ['pres'], show: false },
-    { in: ['jugement'], out: ['pres-text'], show: true, label: 'le Jugement' },
+
+    { in: ['jugement-text'], out: ['homepage'], show: true, label: 'Jugement' },
+    { in: ['jugement'], out: ['jugement-text'], show: false },
+
+    { in: ['pres-text'], out: ['jugement'], show: true, label: 'Pryné et Hypéride' },
+    { in: ['pres'], out: ['pres-text'], show: false },
+
+    { in: ['jugement-devet-text'], out: ['pres'], show: true, label: 'Devant les juges' },
+    { in: ['jugement'], out: ['jugement-devet-text'], show: false },
     { in: ['jugement-devet'], out: [], show: false },
-    { in: ['jugement-end'], out: ['jugement', 'jugement-devet'], show: true, label: 'la Sentence' },
+
+    {
+        in: ['jugement-end-text'],
+        out: ['jugement', 'jugement-devet'],
+        show: true,
+        label: 'la Sentence',
+    },
+    { in: ['jugement-end'], out: ['jugement-end-text'], show: false },
 ]
 
 const slide = {
@@ -68,6 +84,14 @@ const scenes: SceneElement[] = [
         line: true,
     },
     {
+        id: 'jugement-text',
+        component: JugementText,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: true,
+        line: true,
+    },
+    {
         id: 'jugement-devet',
         component: JugementDevet,
         transitions: { ...slide },
@@ -76,11 +100,27 @@ const scenes: SceneElement[] = [
         line: true,
     },
     {
+        id: 'jugement-devet-text',
+        component: JugementDevetText,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: true,
+        line: true,
+    },
+    {
         id: 'jugement-end',
         component: JugementEnd,
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
+        line: true,
+    },
+    {
+        id: 'jugement-end-text',
+        component: JugementEndText,
+        transitions: { ...slide },
+        scrollable: false,
+        arrow: true,
         line: true,
     },
 ]

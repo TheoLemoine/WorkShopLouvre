@@ -5,11 +5,11 @@ import Image from './Image'
 import useMouseParalax from '../../helpers/useMouseParalax'
 
 const Jugement = forwardRef<HTMLElement>(() => {
-    const [x1, y1, sx1, sy1] = useMouseParalax(0.1)
+    const [x1, y1, sx1, sy1] = useMouseParalax(0.2)
 
     const offset1 = {
         x: 0 + sx1,
-        y: useNoise(40, 0.03) * 4 + sy1,
+        y: useNoise(40, 0.03) * 5 + sy1,
     }
 
     return (

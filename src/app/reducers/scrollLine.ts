@@ -49,7 +49,12 @@ export type State = {
 const reducer = {
     NEXT(state: State): State {
         const nextEventId = state.currentEventId + 1
-        if (nextEventId > state.scenes.length - 1) return { ...state }
+        if (nextEventId > state.events.length - 1)
+            return {
+                ...state,
+                currentScenesIds: state.events[0].in,
+                currentEventId: 0,
+            }
 
         const event = state.events[nextEventId]
         const newSceneIds = [

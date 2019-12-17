@@ -13,7 +13,6 @@
 
     > div // animated container
         position: absolute
-        $nb_pages: 10
         
         display: flex
         justify-content: center
@@ -22,7 +21,7 @@
         width: 100vw
         height: 100vh
         
-        @for $i from 0 to $nb_pages
+        @for $i from 0 to 20
             &:nth-child(#{$i})
                 z-index: calc(#{$i})
 
