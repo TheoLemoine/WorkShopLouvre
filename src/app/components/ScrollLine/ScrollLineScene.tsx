@@ -38,7 +38,7 @@ const ScrollLineElement: FunctionComponent<ScrollLineElementProps> = ({ scene, n
                     >
                         {<scene.component ref={scrollerRef} />}
                         {scene.arrow ? <Arrow next={next} /> : null}
-                        {scene.line ? <ScrollLineBar /> : null}
+                        {scene.line !== false ? <ScrollLineBar /> : null}
                     </div>
                 ))
             }
