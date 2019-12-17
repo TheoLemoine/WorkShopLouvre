@@ -15,8 +15,7 @@ html body {
     h4,
     h5,
     h6,
-    .title,
-    .subtitle {
+    .title{
         font-family: 'infini', sans-serif;
         font-weight: bold;
         line-height: normal;
@@ -25,12 +24,14 @@ html body {
 
     h1,
     .title {
-        @include fontSize(96);
+        color: $primary;
+        @include fontSize(76);
     }
 
     .subtitle {
-        font-weight: normal;
-        @include fontSize(30);
+        font-weight: bold;
+        letter-spacing: 1px;
+        @include fontSize(22);
     }
 
     .container {

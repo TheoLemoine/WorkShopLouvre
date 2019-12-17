@@ -83,7 +83,6 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
                     />
                 ))}
             </div>
-            <ScrollLineBar />
         </ScrollLineContext.Provider>
     )
 }
