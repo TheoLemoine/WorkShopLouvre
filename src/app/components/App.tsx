@@ -35,8 +35,9 @@ const scenes: SceneElement[] = [
         id: 'homepage',
         component: Home,
         transitions: { ...slide },
-        scrollable: false,
-        arrow: true,
+        scrollable: true,
+        arrow: false,
+        line: false
     },
     {
         id: 'pres',
@@ -44,6 +45,7 @@ const scenes: SceneElement[] = [
         transitions: { ...slide },
         scrollable: false,
         arrow: false,
+        line: true
     },
     {
         id: 'pres-text',
