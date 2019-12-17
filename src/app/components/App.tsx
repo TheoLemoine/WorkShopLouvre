@@ -8,7 +8,7 @@ import PresentationText from './Scenes/PresentationText'
 import Jugement from './Scenes/Jugement'
 
 const events: SceneEvent[] = [
-    { in: ['homepage'], out: [], show: true, label: 'Home' },
+    { in: ['homepage'], out: [], show: false, label: 'Home' },
     { in: ['pres'], out: ['homepage'], show: true, label: 'Présentation' },
     { in: ['pres-text'], out: ['pres'], show: false },
     { in: ['jugement'], out: ['pres-text'], show: true, label: 'le Jugement' },
