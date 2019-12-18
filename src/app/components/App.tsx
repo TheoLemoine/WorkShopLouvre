@@ -133,7 +133,7 @@ export default () => {
     return (<>
         <ScrollLine scenes={scenes} events={events} />
         <MenuIcons menu={menu} className={notice ? ' active' : ''}/>
-        {notice && <Notice />}
+        <Notice active={notice}/>
         </>
     )
 }

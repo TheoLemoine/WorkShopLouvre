@@ -1,0 +1,53 @@
+.notice{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    transition: .1s all;
+    z-index: 0;
+    &.active {
+        z-index: 50;
+    }
+    &-content {
+        position: absolute;
+        top: 30px;
+        right: 10vw;
+        @include fontSize(22);
+    }
+    .scroll {
+        position: absolute;
+        bottom: 10vh;
+        right: 8vw;
+        @include media('tablet') {
+            right: 7vw;
+        }
+        &::before {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: block;
+            content: '';
+            height: 76vh;
+            width: 2px;
+            background: white;
+        }
+        &::after {
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: block;
+            content: '↓';
+            font-family: 'infini', sans-serif;
+            font-weight: bold;
+            @include fontSize(50);
+        }
+    }
+}
