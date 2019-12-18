@@ -2,7 +2,6 @@
     position: absolute;
     top: 0;
     right: 4%;
-    color: black;
     z-index: 16;
     ul {
         li {
@@ -11,6 +10,13 @@
             color: black;
             cursor: pointer;
             @include fontSize(32)
+        }
+    }
+
+    &.active {
+        z-index: 51;
+        ul li {
+            color: white;
         }
     }
 }

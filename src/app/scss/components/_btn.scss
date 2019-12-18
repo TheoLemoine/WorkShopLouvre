@@ -10,7 +10,7 @@
     font-weight: 600;
     transition: .6s all;
 
-    @include fontSize(20)
+    @include fontSize(20);
 
     &:hover {
         color: white;
