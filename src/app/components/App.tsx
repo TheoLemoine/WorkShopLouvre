@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import ScrollLine from './ScrollLine/ScrollLine'
 import { SceneElement, SceneEvent } from '../reducers/scrollLine'
@@ -11,6 +11,8 @@ import JugementEnd from './Scenes/JugementEnd'
 import JugementText from './Scenes/JugementText'
 import JugementDevetText from './Scenes/JugementDevetText'
 import JugementEndText from './Scenes/JugementEndText'
+import MenuIcons from "./Menu/MenuIcons";
+import Notice from "./Popin/Notice";
 
 const events: SceneEvent[] = [
     { in: ['homepage'], out: [], show: false, label: 'Home' },
@@ -126,5 +128,12 @@ const scenes: SceneElement[] = [
 ]
 
 export default () => {
-    return <ScrollLine scenes={scenes} events={events} />
+    const [notice, setNotice] = useState(false)
+    const menu = [{name:"?", click: () => setNotice(!notice)}]
+    return (<>
+        <ScrollLine scenes={scenes} events={events} />
+        <MenuIcons menu={menu} className={notice ? ' active' : ''}/>
+        {notice && <Notice />}
+        </>
+    )
 }

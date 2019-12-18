@@ -3,6 +3,7 @@ import Page from './Page/Page'
 import useNoise from '../../helpers/useNoise'
 import Image from './Image'
 import useMouseParalax from '../../helpers/useMouseParalax'
+import Popup from '../Popup/Popup'
 
 const Presentation = forwardRef<HTMLElement>(() => {
     const [x1, y1, sx1, sy1] = useMouseParalax(0.3)
@@ -52,6 +53,26 @@ const Presentation = forwardRef<HTMLElement>(() => {
                     filter: 'drop-shadow(0px 0px 15px rgba(159, 114, 75, 0.4))',
                 }}
             />
+
+            <Popup
+                button={{
+                    x: 65,
+                    y: 28,
+                    size: 120,
+                }}
+                sheet={{
+                    x: 26,
+                    y: 20,
+                    width: 30,
+                    height: 45,
+                }}
+            >
+                <h2>Phryné</h2>
+                Elle ne s’appelle pas Phryné, c’est un surnom qui signifie « Crapaud ». En fait,
+                c’est parce qu’elle avait le teint un peu jaune. Son vrai nom c’est Mnésareté, qui
+                signifie : qui se souvient de la vertu.
+                <img src="app/assets/img/presentation/crapaux.png" className="popup-img" />
+            </Popup>
         </Page>
     )
 })

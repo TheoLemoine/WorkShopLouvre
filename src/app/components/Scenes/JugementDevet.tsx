@@ -4,6 +4,7 @@ import useNoise from '../../helpers/useNoise'
 import Image from './Image'
 import useMouseParalax from '../../helpers/useMouseParalax'
 import Filter from './Filter'
+import Popup from '../Popup/Popup'
 
 const JugementDevet = forwardRef<HTMLElement>(() => {
     const [x1, y1, sx1, sy1] = useMouseParalax(0.3)
@@ -23,6 +24,29 @@ const JugementDevet = forwardRef<HTMLElement>(() => {
                 posOffset={offset1}
                 src="jugement/devet.png"
             />
+
+            <Popup
+                button={{
+                    x: 16,
+                    y: 75,
+                    size: 140,
+                }}
+                sheet={{
+                    x: 40,
+                    y: 50,
+                    width: 30,
+                    height: 45,
+                }}
+            >
+                <h2>Phryné dans l'Art</h2>
+                L’histoire de Phryné a notamment inspiré de nombreux artistes, des peintres, des
+                sculpteurs, un opéra, des romans, des poèmes…
+                <img
+                    src="app/assets/img/jugement/ref1.jpg"
+                    className="popup-img"
+                    style={{ marginTop: '1rem' }}
+                />
+            </Popup>
         </Page>
     )
 })

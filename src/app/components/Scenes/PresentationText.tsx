@@ -4,7 +4,8 @@ import TextPage from './Page/TextPage'
 const PresentationText = forwardRef<HTMLElement>(() => {
     return (
         <TextPage>
-            <strong>Hypéride</strong> l’avocat de <strong>Phryné</strong>, la défend face aux juges.
+            <strong>Hyperide</strong>, l'orateur qui defend <strong>Phryné</strong>, est un de ses
+            amants, essaye de convaincre les juges de l'innocence de phryne.
         </TextPage>
     )
 })

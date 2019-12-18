@@ -4,6 +4,7 @@ import useNoise from '../../helpers/useNoise'
 import phryne from '../../assets/img/home/phryne.svg'
 import Svg from "../Svg/Svg";
 import useMouseParalax from "../../helpers/useMouseParalax";
+import { useScrollLine } from '../ScrollLine/ScrollLine'
 
 const Home = forwardRef<HTMLElement>(() => {
     const [x, y] = useMouseParalax(0.1)
@@ -12,6 +13,7 @@ const Home = forwardRef<HTMLElement>(() => {
         x: 0 + x,
         y: useNoise(40, 0.03) * 12 + y,
     }
+    const [state, dispatch] = useScrollLine()
     return (
         <Page size={{width: 1100}}>
             <div id="one" className="flex">
@@ -33,7 +35,7 @@ const Home = forwardRef<HTMLElement>(() => {
                         Phryné
                     </h1>
                     <div className="subtitle">L'incroyable procès d'une courtisane</div>
-                    <div className="btn">Démarrer l'expérience</div>
+                    <div className="btn" onClick={() => dispatch({ type: 'NEXT'})}>Démarrer l'expérience</div>
                 </div>
             </div>
         </Page>

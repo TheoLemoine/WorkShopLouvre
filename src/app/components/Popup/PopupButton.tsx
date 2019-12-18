@@ -13,8 +13,8 @@ const PopupButton: FunctionComponent<PopupButtonProps> = ({ x, y, size }) => {
     return (
         <div
             style={{
-                top: `${y}vh`,
-                left: `${x}vw`,
+                top: `${y}%`,
+                left: `${x}%`,
                 height: `${size}px`,
                 width: `${size}px`,
             }}
