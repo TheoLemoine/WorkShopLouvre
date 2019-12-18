@@ -1,0 +1,16 @@
+.menu {
+    position: absolute;
+    top: 0;
+    right: 4%;
+    color: black;
+    z-index: 16;
+    ul {
+        li {
+            font-family: 'infini', sans-serif;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            @include fontSize(32)
+        }
+    }
+}
