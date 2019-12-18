@@ -8,7 +8,7 @@
                 width: 52%;
                 .bg {
                     clip-path: polygon(0 0, 100% 0%, 250px 100%, 0% 100%);
-                    background: url("../assets/img/home/fond.png") no-repeat;
+                    background: url('../assets/img/home/fond.png') no-repeat;
                     background-position: -50%;
                     background-size: cover;
                 }
@@ -17,7 +17,7 @@
                     left: -10px;
 
                     svg {
-                        @include size(auto, 100%)
+                        @include size(auto, 100%);
                     }
                 }
 
@@ -26,7 +26,7 @@
                     position: absolute;
                     right: -125px;
                     bottom: 0;
-                    background: url("../assets/img/home/trait.png") no-repeat center;
+                    background: url('../assets/img/home/trait.png') no-repeat center;
                     background-size: contain;
                     z-index: 5;
                     @include size(100%, 100%);

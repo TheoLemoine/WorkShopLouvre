@@ -28,19 +28,18 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'],
             },
             {
-                test: /\.svg$/,
-                loader: 'svg-inline-loader',
+                test: /\.raw.svg$/i,
+                use: 'svg-inline-loader',
             },
             {
-                test: /\.(gif|png|jpe?g|svg)$/i,
-                loader: 'url-loader',
-                options: {
-                    quality: 85,
-                },
-            },
-            {
-                test: /\.(gif|png|jpe?g|svg)$/i,
+                test: /\.(gif|png|jpe?g|(?<!raw.)svg|woff2?|ttf|otf|eot)$/i,
                 use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[path][name].[ext]',
+                        },
+                    },
                     {
                         loader: 'image-webpack-loader',
                         options: {
@@ -51,15 +50,6 @@ module.exports = {
                         },
                     },
                 ],
-                enforce: 'pre',
-            },
-            {
-                test: /\.(woff2?|ttf|otf|eot|svg)$/,
-                include: path.resolve(__dirname, 'src/app/assets/fonts'),
-                loader: 'file-loader',
-                options: {
-                    name: '[path][name].[ext]',
-                },
             },
         ],
     },
