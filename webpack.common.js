@@ -14,10 +14,6 @@ module.exports = {
                 from: path.resolve(__dirname, 'src/index.html'),
                 to: path.resolve(__dirname, 'dist/index.html'),
             },
-            {
-                from: path.resolve(__dirname, 'src/app/assets/'),
-                to: path.resolve(__dirname, 'dist/app/assets/'),
-            },
         ]),
     ],
     module: {
@@ -36,16 +32,30 @@ module.exports = {
                 loader: 'svg-inline-loader',
             },
             {
-                test: /\.(woff2?|ttf|otf|eot|svg)$/,
-                include: path.resolve(__dirname, 'src/app/assets/fonts'),
-                loader: 'file-loader',
+                test: /\.(jpe?g|png|gif)$/,
+                loader: 'url-loader',
                 options: {
-                    name: '[path][name].[ext]',
+                    quality: 85,
                 },
             },
             {
-                test: /\.(jpg|jpeg|png)$/,
-                include: path.resolve(__dirname, 'src/app/assets/img'),
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                use: [
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            bypassOnDebug: true, // webpack@1.x
+                            webp: {
+                                quality: 75,
+                            },
+                        },
+                    },
+                ],
+                enforce: 'pre',
+            },
+            {
+                test: /\.(woff2?|ttf|otf|eot|svg)$/,
+                include: path.resolve(__dirname, 'src/app/assets/fonts'),
                 loader: 'file-loader',
                 options: {
                     name: '[path][name].[ext]',
