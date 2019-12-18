@@ -15,6 +15,12 @@ module.exports = {
                 to: path.resolve(__dirname, 'dist/index.html'),
             },
         ]),
+        new CopyPlugin([
+            {
+                from: path.resolve(__dirname, 'src/favicon.png'),
+                to: path.resolve(__dirname, 'dist/favicon.png'),
+            },
+        ]),
     ],
     module: {
         rules: [
