@@ -11,6 +11,10 @@ import fond from '../../assets/img/02-fond.png'
 import cadre from '../../assets/img/lesjuges/cadre.svg'
 import lesJuges from '../../assets/img/lesjuges/lesjuges.png'
 
+import aristote from '../../assets/img/lesjuges/aristote.png'
+import anaxagoras from '../../assets/img/lesjuges/anaxagoras.png'
+import socrate from '../../assets/img/lesjuges/socrate.png'
+
 const JugementEnd = forwardRef<HTMLElement>(() => {
     const [x1, y1, sx1, sy1] = useMouseParalax(0.3)
 
@@ -35,13 +39,24 @@ const JugementEnd = forwardRef<HTMLElement>(() => {
                     x: 8,
                     y: 30,
                     width: 30,
-                    height: 20,
+                    height: 40,
                 }}
             >
                 <h2>L'Impiété</h2>
                 Socrate et Anaxagoras furent tous deux condamnés à mort pour impiété (envers les
                 dieux grecs), et Aristote en fut également accusé après la mort d'Alexandre le
                 Grand.
+                <div
+                    style={{
+                        display: 'flex',
+                        width: '100%',
+                        marginTop: '1rem',
+                    }}
+                >
+                    <img src={socrate} style={{ width: '30%' }} />
+                    <img src={anaxagoras} style={{ width: '30%' }} />
+                    <img src={aristote} style={{ width: '30%' }} />
+                </div>
             </Popup>
         </Page>
     )
