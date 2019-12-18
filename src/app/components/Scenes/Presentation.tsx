@@ -35,7 +35,16 @@ const Presentation = forwardRef<HTMLElement>(() => {
             <Image left={20} top={15} height={50} posOffset={offset1} src={arche1} />
             <Image right={20} bottom={15} height={50} posOffset={offset1} src={arche2} />
 
-            <Image left={22} bottom={5} height={70} posOffset={{ x: sx1, y: sy1 }} src={hyperide} />
+            <Image
+                left={22}
+                bottom={5}
+                height={70}
+                posOffset={{ x: sx1, y: sy1 }}
+                src={hyperide}
+                style={{
+                    filter: 'drop-shadow(0px 0px 15px rgba(159, 114, 75, 0.4))',
+                }}
+            />
             <Image
                 right={22}
                 bottom={-5}
