@@ -37,7 +37,7 @@ const Image: FunctionComponent<ImageProps> = ({
 
     return (
         <animated.img
-            src={`app/assets/img/${src}`}
+            src={src}
             alt={alt}
             style={{
                 position: 'absolute',

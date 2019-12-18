@@ -5,6 +5,13 @@ import Image from './Image'
 import useMouseParalax from '../../helpers/useMouseParalax'
 import Popup from '../Popup/Popup'
 
+// images
+
+import fond from '../../assets/img/01-fond.png'
+import fondTrait from '../../assets/img/jugement/fond-trait.png'
+import lesJuges from '../../assets/img/jugement/lesjuges.png'
+import areopagus from '../../assets/img/jugement/Areopagus.jpg'
+
 const Jugement = forwardRef<HTMLElement>(() => {
     const [x1, y1, sx1, sy1] = useMouseParalax(0.2)
 
@@ -15,9 +22,9 @@ const Jugement = forwardRef<HTMLElement>(() => {
 
     return (
         <Page>
-            <Image left={0} top={0} width={100} src="01-fond.png" />
-            <Image left={0} top={0} width={100} src="jugement/fond-trait.png" />
-            <Image left={0} top={0} width={100} posOffset={offset1} src="jugement/lesjuges.png" />
+            <Image left={0} top={0} width={100} src={fond} />
+            <Image left={0} top={0} width={100} src={fondTrait} />
+            <Image left={0} top={0} width={100} posOffset={offset1} src={lesJuges} />
             <Popup
                 button={{
                     x: 30,
@@ -47,7 +54,7 @@ const Jugement = forwardRef<HTMLElement>(() => {
                         suprême de Grèce.
                     </div>
 
-                    <img src="app/assets/img/jugement/Areopagus.jpg" />
+                    <img src={areopagus} />
                 </div>
             </Popup>
         </Page>
