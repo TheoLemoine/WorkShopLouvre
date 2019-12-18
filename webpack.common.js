@@ -32,7 +32,7 @@ module.exports = {
                 loader: 'svg-inline-loader',
             },
             {
-                test: /\.(jpe?g|png|gif)$/,
+                test: /\.(gif|png|jpe?g|svg)$/i,
                 loader: 'url-loader',
                 options: {
                     quality: 85,
