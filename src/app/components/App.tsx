@@ -11,8 +11,8 @@ import JugementEnd from './Scenes/JugementEnd'
 import JugementText from './Scenes/JugementText'
 import JugementDevetText from './Scenes/JugementDevetText'
 import JugementEndText from './Scenes/JugementEndText'
-import MenuIcons from "./Menu/MenuIcons";
-import Notice from "./Popin/Notice";
+//import MenuIcons from "./Menu/MenuIcons";
+//import Notice from "./Popin/Notice";
 
 const events: SceneEvent[] = [
     { in: ['homepage'], out: [], show: false, label: 'Home' },
@@ -126,7 +126,8 @@ const scenes: SceneElement[] = [
         line: true,
     },
 ]
-
+export default () => <ScrollLine scenes={scenes} events={events} />
+/*
 export default () => {
     const [notice, setNotice] = useState(false)
     const menu = [{name:"?", click: () => setNotice(!notice)}]
@@ -136,4 +137,4 @@ export default () => {
         <Notice active={notice}/>
         </>
     )
-}
+}*/
