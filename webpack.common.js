@@ -17,10 +17,34 @@ module.exports = {
         ]),
         new CopyPlugin([
             {
-                from: path.resolve(__dirname, 'src/favicon.png'),
-                to: path.resolve(__dirname, 'dist/favicon.png'),
+                from: path.resolve(__dirname, 'src/manifest.json'),
+                to: path.resolve(__dirname, 'dist/manifest.json'),
             },
         ]),
+        new CopyPlugin([
+            {
+                from: path.resolve(__dirname, 'src/worker.js'),
+                to: path.resolve(__dirname, 'dist/worker.js'),
+            },
+        ]),
+        new CopyPlugin([
+            {
+                from: path.resolve(__dirname, 'src/favicon.ico'),
+                to: path.resolve(__dirname, 'dist/favicon.ico'),
+            },
+        ]),
+        new CopyPlugin([
+            {
+                from: path.resolve(__dirname, 'src/logo.png'),
+                to: path.resolve(__dirname, 'dist/logo.png'),
+            },
+        ]),
+        new CopyPlugin([
+            {
+                from: path.resolve(__dirname, 'src/robots.txt'),
+                to: path.resolve(__dirname, 'dist/robots.txt'),
+            },
+        ])
     ],
     module: {
         rules: [
