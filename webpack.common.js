@@ -1,5 +1,6 @@
 const path = require('path')
 const CopyPlugin = require('copy-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, 'src/app/index.tsx'),
@@ -41,10 +42,26 @@ module.exports = {
         ]),
         new CopyPlugin([
             {
+                from: path.resolve(__dirname, 'src/logo192.png'),
+                to: path.resolve(__dirname, 'dist/logo192.png'),
+            },
+        ]),
+        new CopyPlugin([
+            {
+                from: path.resolve(__dirname, 'src/logo512.png'),
+                to: path.resolve(__dirname, 'dist/logo512.png'),
+            },
+        ]),
+        new CopyPlugin([
+            {
                 from: path.resolve(__dirname, 'src/robots.txt'),
                 to: path.resolve(__dirname, 'dist/robots.txt'),
             },
-        ])
+        ]),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+        }),
     ],
     module: {
         rules: [
