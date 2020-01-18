@@ -1,0 +1,20 @@
+.page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media('tablet') {
+        width: 100% !important;
+        left: auto !important;
+
+        .text-page {
+            width: 85%;
+
+            * {
+                width: 100%;
+            }
+        }
+    }
+
+}
