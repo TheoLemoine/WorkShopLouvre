@@ -23,6 +23,11 @@
         animation-iteration-count: infinite
         animation-timing-function: linear
 
+        &-end
+            > .popup-button
+                @include media(tablet)
+                    right: 23%!important
+
     &-sheet
         position: absolute
         overflow: hidden auto
