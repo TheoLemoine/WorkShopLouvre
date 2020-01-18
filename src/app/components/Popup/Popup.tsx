@@ -14,7 +14,9 @@ import PopupSheet from './PopupSheet'
 type PopupProps = {
     button: {
         x: number
+        reverseX: boolean
         y: number
+        reverseY: boolean
         size: number
     }
     sheet: {

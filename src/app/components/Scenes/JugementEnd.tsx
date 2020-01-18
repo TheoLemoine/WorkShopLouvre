@@ -31,7 +31,8 @@ const JugementEnd = forwardRef<HTMLElement>(() => {
 
             <Popup
                 button={{
-                    x: 55,
+                    x: 8,
+                    reverseX: true,
                     y: 31,
                     size: 200,
                 }}
