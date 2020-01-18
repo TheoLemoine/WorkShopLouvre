@@ -11,6 +11,7 @@ import JugementEnd from './Scenes/JugementEnd'
 import JugementText from './Scenes/JugementText'
 import JugementDevetText from './Scenes/JugementDevetText'
 import JugementEndText from './Scenes/JugementEndText'
+import MobilePage from "./Mobile/MobilePage";
 //import MenuIcons from "./Menu/MenuIcons";
 //import Notice from "./Popin/Notice";
 
@@ -126,7 +127,10 @@ const scenes: SceneElement[] = [
         line: true,
     },
 ]
-export default () => <ScrollLine scenes={scenes} events={events} />
+export default () => <>
+    <ScrollLine scenes={scenes} events={events} />
+    <MobilePage />
+    </>
 /*
 export default () => {
     const [notice, setNotice] = useState(false)

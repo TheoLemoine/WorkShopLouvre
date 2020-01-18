@@ -1,0 +1,38 @@
+.mobile {
+    display: none;
+    z-index: 100;
+    margin: auto;
+    width: calc(100vw - 40px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('/src/app/assets/img/marbre.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 40px 20px;
+
+    &__title {
+        @include fontSize(52);
+    }
+
+    &__subtitle {
+        margin-top: 18px;
+    }
+
+    &__bg {
+       img {
+           width: 100%;
+           object-fit: cover;
+           object-position: center;
+       }
+    }
+
+    @include media('mobile') {
+        display: flex;
+        flex-direction: column;
+    }
+}

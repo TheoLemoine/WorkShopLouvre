@@ -40,6 +40,10 @@
                 width: 100%;
                 top: 5vh;
 
+                @include media('tablet') {
+                    left: -15%;
+                }
+
                 .subtitle {
                     margin-top: 18px;
                 }
