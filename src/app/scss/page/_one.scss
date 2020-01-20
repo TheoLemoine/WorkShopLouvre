@@ -1,5 +1,9 @@
 #one {
     text-align: center;
+    @include media('tablet') {
+        position: relative;
+        left: -100px;
+    }
 
     &.flex {
         > div {
@@ -7,37 +11,12 @@
                 position: relative;
                 width: 52%;
 
-                .bg {
-                    clip-path: polygon(0 0, 100% 0%, 250px 100%, 0% 100%);
-                    background: url('../assets/img/home/fond.png') no-repeat;
-                    background-position: -50%;
-                    background-size: cover;
-
-                    @include media('tablet') {
-                        clip-path: polygon(0 0, 100% 0%, 195px 100%, 0% 100%);
-                    }
-                }
-
                 .svg {
                     height: 100vh;
                     left: -10px;
 
                     svg {
                         @include size(auto, 100%);
-                    }
-                }
-
-                &:after {
-                    content: '';
-                    position: absolute;
-                    right: -125px;
-                    bottom: 0;
-                    background: url('../assets/img/home/trait.png') no-repeat center;
-                    background-size: contain;
-                    z-index: 5;
-                    @include size(100%, 100%);
-                    @include media('tablet') {
-                        right: -100px;
                     }
                 }
             }
@@ -48,10 +27,6 @@
                 margin: auto;
                 width: 100%;
                 top: 5vh;
-
-                @include media('tablet') {
-                    left: -15%;
-                }
 
                 .subtitle {
                     margin-top: 18px;
