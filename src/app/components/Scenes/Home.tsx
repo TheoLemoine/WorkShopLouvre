@@ -5,7 +5,7 @@ import Image from './Image'
 
 // images
 
-import phryne from '../../assets/img/home/phryne.png'
+import phryne from '../../assets/img/home/home.png'
 
 const Home = forwardRef<HTMLElement>(() => {
     const [state, dispatch] = useScrollLine()
