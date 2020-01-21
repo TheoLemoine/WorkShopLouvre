@@ -54,9 +54,9 @@ const JugementEnd = forwardRef<HTMLElement>(() => {
                         marginTop: '1rem',
                     }}
                 >
-                    <img src={socrate} style={{ width: '30%' }} />
-                    <img src={anaxagoras} style={{ width: '30%' }} />
-                    <img src={aristote} style={{ width: '30%' }} />
+                    <img src={socrate} style={{ width: '30%', height: '100%' }} />
+                    <img src={anaxagoras} style={{ width: '30%', height: '100%' }} />
+                    <img src={aristote} style={{ width: '30%', height: '100%' }} />
                 </div>
             </Popup>
             </div>
