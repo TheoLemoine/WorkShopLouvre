@@ -9,6 +9,7 @@ import React, {
     WheelEvent,
     useCallback,
 } from 'react'
+import Hammer from 'hammerjs'
 import TouchObserver from '../../helpers/touchObserver'
 
 import scrollLine, { SceneEvent, SceneElement, State, Action } from '../../reducers/scrollLine'
@@ -39,11 +40,7 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
     let isScrolling = useRef<boolean>(false)
     let scrollTimeout = useRef<number | null>(null)
 
-    useEffect(() => {
-        return () => {
-            window.clearTimeout(scrollTimeout.current)
-        }
-    }, [scrollTimeout])
+    useEffect(() => () => window.clearTimeout(scrollTimeout.current), [scrollTimeout])
 
     const scrollIf = useCallback(
         (up: boolean, down: boolean) => {
@@ -63,13 +60,16 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
         scrollIf(event.deltaY < 0, event.deltaY > 0)
     }
 
-    const { current: touchObserver } = useRef<TouchObserver>(new TouchObserver())
+    const scrollElem = useRef<HTMLDivElement>(null)
+    const scrollHammer = useRef<HammerManager>(null)
 
-    touchObserver.addListener('dragUp', () => {
-        scrollIf(true, false)
-    })
-    touchObserver.addListener('dragDown', () => {
-        scrollIf(false, true)
+    useEffect(() => {
+        scrollHammer.current = new Hammer(scrollElem.current)
+        scrollHammer.current.get('swipe').set({
+            direction: Hammer.DIRECTION_VERTICAL,
+        })
+        scrollHammer.current.on('swipeup', () => scrollIf(false, true))
+        scrollHammer.current.on('swipedown', () => scrollIf(true, false))
     })
 
     const displayLine =
@@ -80,7 +80,7 @@ const ScrollLine: FunctionComponent<ScrollLineProps> = ({ scenes, events }) => {
 
     return (
         <ScrollLineContext.Provider value={[state, dispatch]}>
-            <div onWheel={handleScroll} {...touchObserver.reactBind()} className="scroll-line">
+            <div onWheel={handleScroll} ref={scrollElem} className="scroll-line">
                 {scenes.map(scene => (
                     <ScrollLineScene
                         scene={scene}
