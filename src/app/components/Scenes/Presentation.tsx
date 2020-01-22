@@ -58,7 +58,8 @@ const Presentation = forwardRef<HTMLElement>(() => {
 
             <Popup
                 button={{
-                    x: 65,
+                    x: 24,
+                    reverseX: true,
                     y: 28,
                     size: 120,
                 }}

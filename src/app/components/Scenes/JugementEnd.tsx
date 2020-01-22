@@ -27,11 +27,12 @@ const JugementEnd = forwardRef<HTMLElement>(() => {
         <Page>
             <Image left={-20} top={-10} width={130} src={fond} />
             <Image left={0} top={20} height={70} src={cadre} />
-            <Image left={25} bottom={-10} height={100} posOffset={offset1} src={lesJuges} />
-
+            <Image right={-25} bottom={-10} height={100} posOffset={offset1} src={lesJuges} />
+            <div className="popup-button-end">
             <Popup
                 button={{
-                    x: 55,
+                    x: 12,
+                    reverseX: true,
                     y: 31,
                     size: 200,
                 }}
@@ -53,11 +54,12 @@ const JugementEnd = forwardRef<HTMLElement>(() => {
                         marginTop: '1rem',
                     }}
                 >
-                    <img src={socrate} style={{ width: '30%' }} />
-                    <img src={anaxagoras} style={{ width: '30%' }} />
-                    <img src={aristote} style={{ width: '30%' }} />
+                    <img src={socrate} style={{ width: '30%', height: '100%' }} />
+                    <img src={anaxagoras} style={{ width: '30%', height: '100%' }} />
+                    <img src={aristote} style={{ width: '30%', height: '100%' }} />
                 </div>
             </Popup>
+            </div>
         </Page>
     )
 })
