@@ -34,7 +34,7 @@ const JugementDevet = forwardRef<HTMLElement>(() => {
                     x: 40,
                     y: 50,
                     width: 30,
-                    height: 45,
+                    height: 39,
                 }}
             >
                 <h2>Phryné dans l'Art</h2>
