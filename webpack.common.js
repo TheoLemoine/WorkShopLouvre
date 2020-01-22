@@ -31,7 +31,13 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'],
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'resolve-url-loader',
+                    'sass-loader',
+                ],
             },
             {
                 test: /\.raw.svg$/i,
