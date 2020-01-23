@@ -5,7 +5,7 @@ const PresentationText = forwardRef<HTMLElement>(() => {
     return (
         <TextPage>
             <strong>Hyperide</strong>, l'orateur qui defend <strong>Phryné</strong>, est un de ses
-            amants, essaye de convaincre les juges de l'innocence de phryne.
+            amants, essaye de convaincre les juges de l'innocence de Phryné.
         </TextPage>
     )
 })
