@@ -4,6 +4,9 @@
     "description": "Workshop sur la petite galerie du louvre 2019",
     "main": "src/app/index.js",
     "license": "MIT",
+    "engines": {
+        "node": "16.x"
+    },
     "scripts": {
         "start": "webpack-dev-server --config webpack.dev.js --progress --colors --host 0.0.0.0",
         "build": "webpack --config webpack.prod.js",
